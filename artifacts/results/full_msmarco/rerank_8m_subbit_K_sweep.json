@@ -1,0 +1,50 @@
+{
+  "method": "subbit_stage1_fp32_rerank",
+  "stage1_source": "/cache/results/subbit_full_msmarco.per_query.pt",
+  "stage1_method": "subbit_trained",
+  "encoder": "colbert-ir/colbertv2.0",
+  "corpus": "msmarco-passage (full)",
+  "queries": "msmarco-passage/dev/small",
+  "n_docs": 8841823,
+  "n_total_tokens": 597500043,
+  "n_queries_evaluated": 6980,
+  "r_stage1": 64,
+  "top_k_stage1": 1000,
+  "K_sweep": {
+    "10": {
+      "mrr@10": 0.39317267021421776,
+      "recall@100": 0.9003223495702005,
+      "recall@1000": 0.9752984718242598,
+      "n_eval": 6980,
+      "rerank_secs": 6.466643571853638
+    },
+    "100": {
+      "mrr@10": 0.39965098694683265,
+      "recall@100": 0.9003223495702005,
+      "recall@1000": 0.9752984718242598,
+      "n_eval": 6980,
+      "rerank_secs": 2.142404556274414
+    },
+    "1000": {
+      "mrr@10": 0.4001030154182024,
+      "recall@100": 0.9164995224450814,
+      "recall@1000": 0.9752984718242598,
+      "n_eval": 6980,
+      "rerank_secs": 1.9415357112884521
+    }
+  },
+  "K_values": [
+    10,
+    100,
+    1000
+  ],
+  "wall_clock_sec": {
+    "query_encode": 3.714841842651367,
+    "rerank_total": 1395.8415477275848,
+    "rerank_per_K": {
+      "10": 6.466643571853638,
+      "100": 2.142404556274414,
+      "1000": 1.9415357112884521
+    }
+  }
+}

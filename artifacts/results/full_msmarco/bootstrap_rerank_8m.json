@@ -1,0 +1,24 @@
+{
+  "comparison": "trained+rerank - random+rerank (paired bootstrap)",
+  "metric": "rr@10",
+  "n_boot": 10000,
+  "seed": 42,
+  "by_K": {
+    "100": {
+      "trained_rerank": 0.399651,
+      "random_rerank": 0.400153,
+      "point": -0.000502,
+      "ci_lo": -0.001208,
+      "ci_hi": 0.000178,
+      "n_queries": 6980
+    },
+    "1000": {
+      "trained_rerank": 0.400103,
+      "random_rerank": 0.400058,
+      "point": 4.5e-05,
+      "ci_lo": -0.000547,
+      "ci_hi": 0.000626,
+      "n_queries": 6980
+    }
+  }
+}

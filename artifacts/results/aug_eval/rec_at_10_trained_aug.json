@@ -1,0 +1,9 @@
+{
+  "metric": "recall@10",
+  "value": 0.9667621776504298,
+  "projection": "trained_R_r64_signcoded_stage1",
+  "source_artifact": "outputs/aug_eval/per_query/scale_sweep_trained_100000.per_query.pt",
+  "derivation": "mean(rr@10 > 0) over 6980 judged aug dev queries; same artifact whose mean rr@10 reproduces 0.8505",
+  "n_queries": 6980,
+  "mean_rr@10_check": 0.8504842639129534
+}

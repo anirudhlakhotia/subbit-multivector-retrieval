@@ -1,0 +1,46 @@
+{
+  "method": "identity_plus_scale",
+  "checkpoint_path": "/ckpt/best.pt",
+  "checkpoint_config": {
+    "input_dim": 128,
+    "projected_dim": 64,
+    "init_method": "identity",
+    "orthogonal_constraint": true,
+    "learned_thresholds": false,
+    "use_scale": true,
+    "vector_scale": false,
+    "freeze_R": true,
+    "token_adapter": false,
+    "adapter_hidden_dim": 64,
+    "adapter_logit_scale": 0.1,
+    "geometry_adapter": false,
+    "geometry_adapter_hidden_dim": 256,
+    "geometry_adapter_layers": 2,
+    "geometry_adapter_dropout": 0.05,
+    "quantizer_bits": 1
+  },
+  "encoder": "colbert-ir/colbertv2.0",
+  "corpus": "msmarco-passage (full)",
+  "queries": "msmarco-passage/dev/small",
+  "n_docs": 8841823,
+  "n_total_tokens": 597500043,
+  "n_queries_evaluated": 6980,
+  "r": 64,
+  "use_scale": true,
+  "scoring": "asymmetric",
+  "doc_chunk": 8192,
+  "query_batch": 128,
+  "top_k": 1000,
+  "metrics": {
+    "mrr@10": 0.37348262609723987,
+    "recall@100": 0.8935530085959886,
+    "recall@1000": 0.9749761222540593
+  },
+  "wall_clock_sec": {
+    "sweep": 3186.965168952942
+  },
+  "provenance": {
+    "rand_seed": null,
+    "R_source": "checkpoint"
+  }
+}

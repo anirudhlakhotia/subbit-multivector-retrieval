@@ -1,0 +1,118 @@
+{
+  "fidelity_bars": {
+    "mrr_random": {
+      "exact": 0.8393,
+      "paper": "0.8393"
+    },
+    "mrr_trained": {
+      "exact": 0.8496,
+      "paper": "0.8496"
+    },
+    "spearman_rho_random": {
+      "exact": 0.645,
+      "paper": "0.645"
+    },
+    "spearman_rho_trained": {
+      "exact": 0.74,
+      "paper": "0.740"
+    }
+  },
+  "geometry_checks": {
+    "non_relevant_mean_hyperplane_distance": {
+      "exact": 0.08018089830875397,
+      "paper": "0.08018"
+    },
+    "relevant_mean_hyperplane_distance": {
+      "exact": 0.08017413318157196,
+      "paper": "0.08017"
+    },
+    "trained_R_mean_angle_to_pca_deg": {
+      "exact": 21.428117752075195,
+      "paper": "21"
+    }
+  },
+  "paper_reference": "fig:training",
+  "scale_gain": {
+    "100k": {
+      "ci95": [
+        {
+          "exact": 0.0055,
+          "paper": "0.0055"
+        },
+        {
+          "exact": 0.0144,
+          "paper": "0.0144"
+        }
+      ],
+      "delta_mrr": {
+        "exact": 0.01,
+        "paper": "0.0100"
+      }
+    },
+    "8.8M": {
+      "ci95": [
+        {
+          "exact": -0.006,
+          "paper": "-0.0060"
+        },
+        {
+          "exact": 0.0058,
+          "paper": "0.0058"
+        }
+      ],
+      "delta_mrr": {
+        "exact": -0.0001,
+        "paper": "-0.0001"
+      }
+    }
+  },
+  "scatter": {
+    "gain_queries_mean_abs_delta_mrr": {
+      "exact": 0.09979888720570175,
+      "paper": "0.100"
+    },
+    "loss_queries_mean_abs_delta_mrr": {
+      "exact": 0.0955645403507047,
+      "paper": "0.096"
+    },
+    "n_queries": {
+      "exact": 1500,
+      "paper": "1500"
+    },
+    "pearson_p": {
+      "exact": 0.6167491538962679,
+      "paper": "0.62"
+    },
+    "pearson_r": {
+      "exact": -0.012932137812245694,
+      "paper": "-0.013"
+    }
+  },
+  "source_files": [
+    "artifacts/results/aug_eval/sec8_figure_data.json",
+    "artifacts/results/aug_eval/drho_vs_dmrr_q1500.json",
+    "artifacts/results/diagnostics/r_deep_dive.json"
+  ],
+  "training_budget": {
+    "2M": {
+      "mrr@10": {
+        "exact": 0.8492,
+        "paper": "0.8492"
+      },
+      "spearman_rho": {
+        "exact": 0.7445,
+        "paper": "0.7445"
+      }
+    },
+    "50k": {
+      "mrr@10": {
+        "exact": 0.8496,
+        "paper": "0.8496"
+      },
+      "spearman_rho": {
+        "exact": 0.7401,
+        "paper": "0.7401"
+      }
+    }
+  }
+}

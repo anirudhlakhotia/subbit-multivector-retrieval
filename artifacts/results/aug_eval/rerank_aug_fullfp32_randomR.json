@@ -1,0 +1,64 @@
+{
+  "checkpoint": "outputs/random_r64_seed42/checkpoints/best.pt",
+  "config": {
+    "r": 64,
+    "use_scale": false,
+    "vector_scale": false,
+    "n_queries": 6980,
+    "n_docs": 100000,
+    "max_doc_tokens": 180,
+    "top_k_cutoffs": [
+      100,
+      500,
+      1000,
+      2000
+    ],
+    "embeddings_dir": "data/embeddings/msmarco/100k_aug",
+    "score_doc_chunk": 4096,
+    "query_batch": 32
+  },
+  "metrics": {
+    "stage1_binary": {
+      "mrr@10": 0.8391235161686436,
+      "ndcg@10": 0.8668441999589499,
+      "recall@100": 0.9897086914995225,
+      "recall@1000": 0.9962989493791785
+    },
+    "two_stage": {
+      "100": {
+        "mrr@10": 0.8640626279164934,
+        "ndcg@10": 0.8887476921800406,
+        "recall@100": 0.9897086914995225,
+        "recall@1000": 0.9962989493791785
+      },
+      "500": {
+        "mrr@10": 0.864171442215852,
+        "ndcg@10": 0.8888635083963817,
+        "recall@100": 0.9931948424068768,
+        "recall@1000": 0.9962989493791785
+      },
+      "1000": {
+        "mrr@10": 0.8640425023877718,
+        "ndcg@10": 0.8888196259027368,
+        "recall@100": 0.9936246418338109,
+        "recall@1000": 0.9962989493791785
+      },
+      "2000": {
+        "mrr@10": 0.8640390912812088,
+        "ndcg@10": 0.888816348846322,
+        "recall@100": 0.9936962750716333,
+        "recall@1000": 0.9976599808978032
+      }
+    }
+  },
+  "bytes_per_token": {
+    "binary_only": 8.0,
+    "binary_plus_fp32_rerank": 520.0,
+    "fp32_only": 512.0
+  },
+  "wall_clock": {
+    "stage1_seconds": 6752.278787136078,
+    "stage2_seconds": 66.68718600273132,
+    "oracle_seconds": 0.0
+  }
+}

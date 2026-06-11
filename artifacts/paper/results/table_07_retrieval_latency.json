@@ -1,0 +1,66 @@
+{
+  "paper_reference": "tab:e2e-latency",
+  "rows": [
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "iqr_ms": {
+        "exact": 0.5336465000000032,
+        "paper": "0.5"
+      },
+      "median_ms": {
+        "exact": 119.5313955,
+        "paper": "119.5"
+      },
+      "method": "Sign-coded exhaustive"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 512,
+        "paper": "512"
+      },
+      "iqr_ms": {
+        "exact": 0.25458350000002383,
+        "paper": "0.3"
+      },
+      "median_ms": {
+        "exact": 144.154813,
+        "paper": "144.2"
+      },
+      "method": "fp32 exhaustive"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 34,
+        "paper": "approx 34"
+      },
+      "iqr_ms": {
+        "exact": 0.4053539999999991,
+        "paper": "0.4"
+      },
+      "max_docs": {
+        "exact": 4096,
+        "paper": "4096"
+      },
+      "median_ms": {
+        "exact": 8.04725,
+        "paper": "8.0"
+      },
+      "method": "PLAID engine official b=2",
+      "mrr@10": {
+        "exact": 0.8630717014599518,
+        "paper": "0.8631"
+      }
+    }
+  ],
+  "sign_coded_vs_fp32_latency_ratio": {
+    "exact": 1.2059995819257376,
+    "paper": "1.21"
+  },
+  "source_files": [
+    "artifacts/results/latency/latency_interleaved_table.json",
+    "artifacts/results/latency/plaid_official_engine.json"
+  ]
+}

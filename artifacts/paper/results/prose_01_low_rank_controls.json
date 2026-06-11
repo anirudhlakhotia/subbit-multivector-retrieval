@@ -1,0 +1,53 @@
+{
+  "colbertv2": {
+    "fp32_mrr@10": {
+      "exact": 0.8330284941101544,
+      "paper": "0.8330"
+    },
+    "r16_mrr@10": {
+      "exact": 0.38777914222040316,
+      "paper": "0.388"
+    },
+    "r16_retention": {
+      "exact": 0.46550525577715196,
+      "paper": "46.6%"
+    },
+    "r32_mrr@10": {
+      "exact": 0.7070437076454265,
+      "paper": "0.707"
+    },
+    "r32_retention": {
+      "exact": 0.8487629326541758,
+      "paper": "84.9%"
+    }
+  },
+  "constbert32": {
+    "fp32_mrr@10": {
+      "exact": 0.8581125778869332,
+      "paper": "0.8581"
+    },
+    "r16_mrr@10": {
+      "exact": 0.2220616159548824,
+      "paper": "0.222"
+    },
+    "r16_retention": {
+      "exact": 0.2587791178888206,
+      "paper": "25.9%"
+    },
+    "r32_mrr@10": {
+      "exact": 0.6282944467185155,
+      "paper": "0.628"
+    },
+    "r32_retention": {
+      "exact": 0.7321818405991259,
+      "paper": "73.2%"
+    }
+  },
+  "paper_reference": "low-rank ConstBERT control prose",
+  "source_files": [
+    "artifacts/results/diagnostics/two_stage_r16_fast.json",
+    "artifacts/results/diagnostics/two_stage_r32_fast.json",
+    "artifacts/results/diagnostics/sign_only_canonical_colbertv2.json",
+    "artifacts/results/diagnostics/bootstrap_per_config_effects_constbert_v2.json"
+  ]
+}

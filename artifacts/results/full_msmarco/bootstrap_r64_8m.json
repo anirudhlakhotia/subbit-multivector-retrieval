@@ -1,0 +1,42 @@
+{
+  "method_a": "rand_plus_scale",
+  "method_b": "subbit_trained",
+  "comparison": "subbit_trained - rand_plus_scale (paired bootstrap)",
+  "r": 64,
+  "scale": "8.8M MS MARCO Passage dev",
+  "n_queries": 6980,
+  "n_boot": 10000,
+  "seed": 42,
+  "metrics": {
+    "rr@10": {
+      "point": -5.5600889560827895e-05,
+      "ci_lo": -0.006021370434397057,
+      "ci_hi": 0.005815027142023631,
+      "mean_a": 0.37235497234864184,
+      "mean_b": 0.37229937145908104,
+      "n_queries": 6980,
+      "n_boot": 10000,
+      "seed": 42
+    },
+    "recall@100": {
+      "point": 0.008703438399685147,
+      "ci_lo": 0.003689111743581329,
+      "ci_hi": 0.013694185786973949,
+      "mean_a": 0.8916189112174818,
+      "mean_b": 0.900322349617167,
+      "n_queries": 6980,
+      "n_boot": 10000,
+      "seed": 42
+    },
+    "recall@1000": {
+      "point": 0.0021131805114896385,
+      "ci_lo": -0.0005853032570513747,
+      "ci_hi": 0.004954632275703131,
+      "mean_a": 0.9731852913355418,
+      "mean_b": 0.9752984718470313,
+      "n_queries": 6980,
+      "n_boot": 10000,
+      "seed": 42
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "config": {
+    "embeddings_dir": "data/embeddings/msmarco/100k_aug",
+    "checkpoint": "outputs/sweep_10k/r64/checkpoints/best.pt",
+    "r": 64,
+    "k_values": [
+      10,
+      100,
+      1000
+    ],
+    "max_queries": -1,
+    "max_docs": -1,
+    "pca_fit_tokens": 200000,
+    "device": "cpu"
+  },
+  "rows": [
+    {
+      "label": "pca_projection",
+      "spearman_mean": 0.7184611305122516,
+      "spearman_std": 0.044118621039461604,
+      "kendall_mean": 0.5291323019084435,
+      "pearson_flat": 0.752147049843525,
+      "overlap_at_k": {
+        "10": 0.6194412607449857,
+        "100": 0.5307063037249283,
+        "1000": 0.5340388252148998
+      },
+      "n_queries": 6980
+    },
+    {
+      "label": "identity_truncation",
+      "spearman_mean": 0.6346311879631101,
+      "spearman_std": 0.05550571271600465,
+      "kendall_mean": 0.45644092410166903,
+      "pearson_flat": 0.6695915304838089,
+      "overlap_at_k": {
+        "10": 0.6094412607449856,
+        "100": 0.4980945558739255,
+        "1000": 0.47984011461318055
+      },
+      "n_queries": 6980
+    }
+  ]
+}

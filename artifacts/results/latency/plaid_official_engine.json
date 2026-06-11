@@ -1,0 +1,68 @@
+{
+  "benchmark": "plaid_official_engine",
+  "implementation": "colbert-ai 0.2.22 (official PLAID), CPU",
+  "index": "msmarco100k.nbits2",
+  "engine_params": {
+    "k": 1000,
+    "ncells": 4,
+    "centroid_score_threshold": 0.4,
+    "ndocs": 4096,
+    "nbits": 2,
+    "doc_maxlen": 180
+  },
+  "threads": 8,
+  "seed": 42,
+  "latency_queries": 500,
+  "rounds": 5,
+  "timing_note": "engine_* times dense_search() only (candidate generation + pruning + decompression + scoring), excluding BERT query encoding, to match the interleaved bench's boundary; full_search_* includes query encoding.",
+  "quality": {
+    "n_queries": 6980,
+    "mrr@10": 0.8630717014599518,
+    "recall@100": 0.9938395415472779,
+    "recall@1000": 0.9978510028653295
+  },
+  "rounds_detail": [
+    {
+      "engine_median_ms": 8.194333499999999,
+      "engine_mean_ms": 8.273307144,
+      "engine_p95_ms": 10.221348549999995,
+      "full_search_median_ms": 25.2660415
+    },
+    {
+      "engine_median_ms": 8.04725,
+      "engine_mean_ms": 8.119159418,
+      "engine_p95_ms": 10.166993749999998,
+      "full_search_median_ms": 25.2614585
+    },
+    {
+      "engine_median_ms": 8.290958499999999,
+      "engine_mean_ms": 8.382214824,
+      "engine_p95_ms": 10.9172247,
+      "full_search_median_ms": 25.544875
+    },
+    {
+      "engine_median_ms": 7.7524370000000005,
+      "engine_mean_ms": 7.779040266,
+      "engine_p95_ms": 9.6554559,
+      "full_search_median_ms": 24.7735625
+    },
+    {
+      "engine_median_ms": 7.7889795,
+      "engine_mean_ms": 7.746988813999999,
+      "engine_p95_ms": 9.457490199999999,
+      "full_search_median_ms": 25.1329585
+    }
+  ],
+  "summary": {
+    "engine_median_of_round_medians_ms": 8.04725,
+    "engine_round_medians_ms": [
+      7.7524370000000005,
+      7.7889795,
+      8.04725,
+      8.194333499999999,
+      8.290958499999999
+    ],
+    "engine_iqr_ms": 0.4053539999999991,
+    "full_search_median_ms": 25.2614585
+  }
+}

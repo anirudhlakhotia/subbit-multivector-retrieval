@@ -1,0 +1,16 @@
+{
+  "n": 1500,
+  "mean_drho": 0.10068939941147396,
+  "mean_dmrr": 0.015924074014027914,
+  "n_dmrr_nonzero": 255,
+  "pearson_drho_dmrr": -0.012932137812245694,
+  "pearson_p": 0.6167491538962679,
+  "spearman_drho_dmrr": 0.005834307465196302,
+  "spearman_p": 0.8213761855374565,
+  "source": "preservation_perq_q1500.json (per_query rho) + scale_sweep_{trained,random}_100000.per_query.pt (rr@10)",
+  "reading": "per-query fidelity gain from training (\u0394\u03c1) is uncorrelated with per-query retrieval gain (\u0394MRR@10)",
+  "mean_drho_mrr_gain": 0.09979888720570175,
+  "mean_drho_mrr_lose": 0.0955645403507047,
+  "n_gain": 161,
+  "n_lose": 94
+}

@@ -1,0 +1,16 @@
+{
+  "method": "rabitq_asym",
+  "embeddings_dir": "data/embeddings/msmarco/100k_aug",
+  "encoder": "colbert-ir/colbertv2.0",
+  "r": 128,
+  "bytes_per_token": 24,
+  "scoring": "asymmetric (float Rq x sign(Rd) with norm/vdot correction)",
+  "seed": 42,
+  "n_docs": 100000,
+  "n_queries": 6980,
+  "metrics": {
+    "mrr@10": 0.8582076909082622,
+    "recall@100": 0.9925023877745941,
+    "recall@1000": 0.998233046800382
+  }
+}

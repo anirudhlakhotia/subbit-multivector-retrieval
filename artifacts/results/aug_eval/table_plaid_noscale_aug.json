@@ -1,0 +1,432 @@
+{
+  "run_metadata": {
+    "timestamp_utc": "2026-06-09T03:43:28Z",
+    "python_version": "3.9.6",
+    "platform": "macOS-26.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "hostname": "C650DX4G5Q",
+    "git_sha": "af2b960",
+    "git_dirty": true,
+    "torch_version": "2.8.0",
+    "cuda_available": false,
+    "mps_available": true,
+    "config": {
+      "eval_mode": "float",
+      "regimes": [
+        64
+      ],
+      "max_queries": -1,
+      "pca_sample_size": 50000,
+      "seed": 42,
+      "checkpoints": [
+        "outputs/50k_topk/checkpoints/best.pt"
+      ],
+      "config_path": [
+        "configs/base.yaml"
+      ],
+      "skip_baselines": "outputs/aug_eval/baseline_100k_aug_r64.json",
+      "include_plaid": true,
+      "plaid_centroids": 32768,
+      "plaid_residual_bits": [
+        1,
+        2,
+        4
+      ],
+      "plaid_kmeans_sample": 1000000
+    }
+  },
+  "rows": [
+    {
+      "meta": {
+        "label": "FP128",
+        "r": 128,
+        "bytes_per_token": 512,
+        "compression": 1,
+        "trained": false
+      },
+      "metrics": {
+        "mrr@10": 0.8641584800109127,
+        "ndcg@10": 0.8889408574776155,
+        "recall@100": 0.9939828080229226,
+        "recall@1000": 0.9989493791786055
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1756030.9961239926,
+          "mean_ms": 251.58037193753475,
+          "p50_ms": 241.8400829999996,
+          "p95_ms": 364.79591700003766,
+          "p99_ms": 441.69125000007625,
+          "min_ms": 157.19700000000003,
+          "max_ms": 958.8967920000009,
+          "throughput_qps": 3.97487288971928
+        },
+        "encode_seconds": 14.810966040999999,
+        "memory": {
+          "device_type": "mps",
+          "device_peak_mb": 5158.211181640625,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 3447624320,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 3.2108503580093384
+      }
+    },
+    {
+      "meta": {
+        "label": "identity r=64",
+        "r": 64,
+        "bytes_per_token": 8,
+        "compression": 64,
+        "trained": false
+      },
+      "metrics": {
+        "mrr@10": 0.8366803679446932,
+        "ndcg@10": 0.8644201100064893,
+        "recall@100": 0.9903533906399237,
+        "recall@1000": 0.9960840496657115
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1322875.8335169968,
+          "mean_ms": 189.5237583835239,
+          "p50_ms": 181.6120419998697,
+          "p95_ms": 254.16158299958624,
+          "p99_ms": 267.38462499997695,
+          "min_ms": 135.671832999833,
+          "max_ms": 318.1943750000755,
+          "throughput_qps": 5.276383333304213
+        },
+        "encode_seconds": 48.7209942500001,
+        "memory": {
+          "device_type": "mps",
+          "device_peak_mb": 2918.177490234375,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 54262880,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.05053624510765076
+      }
+    },
+    {
+      "meta": {
+        "label": "random_proj r=64",
+        "r": 64,
+        "bytes_per_token": 8,
+        "compression": 64,
+        "trained": false
+      },
+      "metrics": {
+        "mrr@10": 0.8393475690180545,
+        "ndcg@10": 0.8670017305001692,
+        "recall@100": 0.9897086914995225,
+        "recall@1000": 0.9962989493791785
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1311058.1514830051,
+          "mean_ms": 187.83068072822422,
+          "p50_ms": 178.89416700018046,
+          "p95_ms": 255.3142079996178,
+          "p99_ms": 266.88024999975823,
+          "min_ms": 135.1388749999387,
+          "max_ms": 302.28270899988274,
+          "throughput_qps": 5.323943863286738
+        },
+        "encode_seconds": 50.05699483400031,
+        "memory": {
+          "device_type": "mps",
+          "device_peak_mb": 2918.216552734375,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 54262880,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.05053624510765076
+      }
+    },
+    {
+      "meta": {
+        "label": "pca_proj r=64",
+        "r": 64,
+        "bytes_per_token": 8,
+        "compression": 64,
+        "trained": false
+      },
+      "metrics": {
+        "mrr@10": 0.8395648565061158,
+        "ndcg@10": 0.8665464413641653,
+        "recall@100": 0.9904489016236867,
+        "recall@1000": 0.9974212034383955
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1318832.6327430045,
+          "mean_ms": 188.9445032583101,
+          "p50_ms": 181.22141700041539,
+          "p95_ms": 253.78816699958406,
+          "p99_ms": 266.3430829998106,
+          "min_ms": 130.9754169997177,
+          "max_ms": 321.0034169997016,
+          "throughput_qps": 5.292559364020653
+        },
+        "encode_seconds": 53.47761237499981,
+        "memory": {
+          "device_type": "mps",
+          "device_peak_mb": 2918.216552734375,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 54262880,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.05053624510765076
+      }
+    },
+    {
+      "meta": {
+        "label": "SubBit r=64",
+        "r": 64,
+        "bytes_per_token": 8,
+        "compression": 64,
+        "trained": true
+      },
+      "metrics": {
+        "mrr@10": 0.8497128416791723,
+        "ndcg@10": 0.8752233189740347,
+        "recall@100": 0.990974212034384,
+        "recall@1000": 0.9971585482330467
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1428816.8248680045,
+          "mean_ms": 204.70155084068833,
+          "p50_ms": 195.12062499998706,
+          "p95_ms": 294.99766699996144,
+          "p99_ms": 351.03270800004793,
+          "min_ms": 109.02499999997417,
+          "max_ms": 1027.7600829999756,
+          "throughput_qps": 4.885160839735225
+        },
+        "encode_seconds": 3.5282008329999996,
+        "memory": {
+          "device_type": "cpu",
+          "device_peak_mb": null,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 54262880,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.05053624510765076
+      }
+    },
+    {
+      "meta": {
+        "label": "SubBit r=64 (no scale)",
+        "r": 64,
+        "bytes_per_token": 8,
+        "compression": 64,
+        "trained": true,
+        "use_scale": false
+      },
+      "metrics": {
+        "mrr@10": 0.8500179651612301,
+        "ndcg@10": 0.8754830301006663,
+        "recall@100": 0.9911174785100286,
+        "recall@1000": 0.9970152817574021
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1011481.1810369996,
+          "mean_ms": 144.91134398810883,
+          "p50_ms": 131.29091700011486,
+          "p95_ms": 188.220542000181,
+          "p99_ms": 217.02412500007995,
+          "min_ms": 107.83504200003335,
+          "max_ms": 3455.555167000057,
+          "throughput_qps": 6.90077099886713
+        },
+        "encode_seconds": 3.3812339169999177,
+        "memory": {
+          "device_type": "cpu",
+          "device_peak_mb": null,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 54262880,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.05053624510765076
+      }
+    },
+    {
+      "meta": {
+        "label": "PLAID (C=32768, b=1)",
+        "r": 128,
+        "bytes_per_token": 18,
+        "bytes_per_token_exact": 17.875,
+        "compression": 28,
+        "trained": false,
+        "method": "plaid",
+        "plaid_config": {
+          "n_centroids": 32768,
+          "residual_bits": 1,
+          "kmeans_iters": 20,
+          "kmeans_sample": 1000000,
+          "kmeans_chunk": 1024,
+          "seed": 42
+        }
+      },
+      "metrics": {
+        "mrr@10": 0.8497807226997744,
+        "ndcg@10": 0.8755914193855697,
+        "recall@100": 0.9929321872015282,
+        "recall@1000": 0.998662846227316
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1185724.914783997,
+          "mean_ms": 169.87462962521448,
+          "p50_ms": 168.08170800004518,
+          "p95_ms": 180.31504200007475,
+          "p99_ms": 193.01837500006513,
+          "min_ms": 136.46987499987517,
+          "max_ms": 315.7219170002463,
+          "throughput_qps": 5.88669421800211
+        },
+        "encode_seconds": 226.11433104100024,
+        "memory": {
+          "device_type": "cpu",
+          "device_peak_mb": null,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 121591480,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.11324089020490646
+      }
+    },
+    {
+      "meta": {
+        "label": "PLAID (C=32768, b=2)",
+        "r": 128,
+        "bytes_per_token": 34,
+        "bytes_per_token_exact": 33.875,
+        "compression": 15,
+        "trained": false,
+        "method": "plaid",
+        "plaid_config": {
+          "n_centroids": 32768,
+          "residual_bits": 2,
+          "kmeans_iters": 20,
+          "kmeans_sample": 1000000,
+          "kmeans_chunk": 1024,
+          "seed": 42
+        }
+      },
+      "metrics": {
+        "mrr@10": 0.8593133442488723,
+        "ndcg@10": 0.8841366720524131,
+        "recall@100": 0.9934336198662846,
+        "recall@1000": 0.9988061127029607
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1178915.7876319939,
+          "mean_ms": 168.89910997593034,
+          "p50_ms": 167.64291599974968,
+          "p95_ms": 178.9502920000814,
+          "p99_ms": 193.33833299970138,
+          "min_ms": 134.55883400001767,
+          "max_ms": 410.9112919995823,
+          "throughput_qps": 5.920694313560971
+        },
+        "encode_seconds": 229.60635762499987,
+        "memory": {
+          "device_type": "cpu",
+          "device_peak_mb": null,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 229317240,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.2135683223605156
+      }
+    },
+    {
+      "meta": {
+        "label": "PLAID (C=32768, b=4)",
+        "r": 128,
+        "bytes_per_token": 66,
+        "bytes_per_token_exact": 65.875,
+        "compression": 7,
+        "trained": false,
+        "method": "plaid",
+        "plaid_config": {
+          "n_centroids": 32768,
+          "residual_bits": 4,
+          "kmeans_iters": 20,
+          "kmeans_sample": 1000000,
+          "kmeans_chunk": 1024,
+          "seed": 42
+        }
+      },
+      "metrics": {
+        "mrr@10": 0.8627256446991376,
+        "ndcg@10": 0.8875430936570913,
+        "recall@100": 0.9939111747851003,
+        "recall@1000": 0.9989493791786055
+      },
+      "measurement": {
+        "scoring_latency": {
+          "count": 6980,
+          "total_ms": 1181110.5492839972,
+          "mean_ms": 169.21354574269301,
+          "p50_ms": 168.61345899997104,
+          "p95_ms": 181.89595799958624,
+          "p99_ms": 194.22704200042062,
+          "min_ms": 139.4789160003711,
+          "max_ms": 767.9794169998786,
+          "throughput_qps": 5.909692368958483
+        },
+        "encode_seconds": 227.49739324999973,
+        "memory": {
+          "device_type": "cpu",
+          "device_peak_mb": null,
+          "host_rss_mb": null
+        },
+        "eval_mode": "float",
+        "num_docs": 100000,
+        "num_queries": 6980,
+        "index_total_bytes": 444768760,
+        "latency_repeat_means_ms": [],
+        "index_total_gb": 0.41422318667173386
+      }
+    }
+  ]
+}

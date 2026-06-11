@@ -1,0 +1,55 @@
+{
+  "identity_vs_random_rotation_bootstrap": {
+    "bootstrap_delta_sign_d_minus_random": {
+      "exact": 0.0033326511120207397,
+      "paper": "+0.0033"
+    },
+    "ci95": [
+      {
+        "exact": -0.0014709856960931458,
+        "paper": "-0.0015"
+      },
+      {
+        "exact": 0.008228338052030744,
+        "paper": "+0.0082"
+      }
+    ],
+    "identity_plus_scale_table_mrr@10": {
+      "exact": 0.3921279619775325,
+      "paper": "0.3921"
+    },
+    "random_R_bootstrap_mean_mrr@10": {
+      "exact": 0.38941840633101377,
+      "paper": "0.3894"
+    },
+    "random_plus_scale_table_mrr@10": {
+      "exact": 0.39163420430254287,
+      "paper": "0.3916"
+    },
+    "sign_d_no_rotation_bootstrap_mean_mrr@10": {
+      "exact": 0.3927510574430345,
+      "paper": "0.3928"
+    }
+  },
+  "paper_reference": "r=128 full-scale rotation prose",
+  "source_files": [
+    "artifacts/results/full_msmarco/bootstrap_r128_8m.json",
+    "artifacts/results/full_msmarco/subbit_r128_full_msmarco.json",
+    "artifacts/results/full_msmarco/rand128_plus_scale_full_msmarco.json",
+    "artifacts/results/full_msmarco/identity128_plus_scale_full_msmarco.json"
+  ],
+  "trained_vs_random_plus_scale_point_estimate": {
+    "delta_trained_minus_random": {
+      "exact": -0.002720186928639623,
+      "paper": "-0.0027"
+    },
+    "random_R_mrr@10": {
+      "exact": 0.39163420430254287,
+      "paper": "0.3916"
+    },
+    "trained_R_mrr@10": {
+      "exact": 0.38891401737390324,
+      "paper": "0.3889"
+    }
+  }
+}

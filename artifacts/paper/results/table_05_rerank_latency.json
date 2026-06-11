@@ -1,0 +1,50 @@
+{
+  "paper_reference": "tab:rerank-latency",
+  "rows": [
+    {
+      "K": {
+        "exact": 100,
+        "paper": "100"
+      },
+      "iqr_ms": {
+        "exact": 0.249417,
+        "paper": "0.25"
+      },
+      "median_ms": {
+        "exact": 1.123271,
+        "paper": "1.1"
+      }
+    },
+    {
+      "K": {
+        "exact": 256,
+        "paper": "256"
+      },
+      "iqr_ms": {
+        "exact": 0.2871044999999999,
+        "paper": "0.29"
+      },
+      "median_ms": {
+        "exact": 2.0705834999999997,
+        "paper": "2.1"
+      }
+    },
+    {
+      "K": {
+        "exact": 1024,
+        "paper": "1024"
+      },
+      "iqr_ms": {
+        "exact": 0.25120849999999884,
+        "paper": "0.25"
+      },
+      "median_ms": {
+        "exact": 8.536979,
+        "paper": "8.5"
+      }
+    }
+  ],
+  "source_files": [
+    "artifacts/results/latency/latency_interleaved_rerank.json"
+  ]
+}

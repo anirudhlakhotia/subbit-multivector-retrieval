@@ -1,0 +1,150 @@
+{
+  "paper_reference": "tab:preservation",
+  "rows": [
+    {
+      "kendall_tau": {
+        "exact": 1.0,
+        "paper": "1.000"
+      },
+      "method": "fp32",
+      "overlap@10": {
+        "exact": 1.0,
+        "paper": "1.000"
+      },
+      "overlap@100": {
+        "exact": 1.0,
+        "paper": "1.000"
+      },
+      "overlap@1000": {
+        "exact": 1.0,
+        "paper": "1.000"
+      },
+      "pearson": {
+        "exact": 1.0,
+        "paper": "1.000"
+      },
+      "source_file": null,
+      "spearman_rho": {
+        "exact": 1.0,
+        "paper": "1.000"
+      }
+    },
+    {
+      "kendall_tau": {
+        "exact": 0.5504188212475373,
+        "paper": "0.550"
+      },
+      "method": "Trained asym",
+      "overlap@10": {
+        "exact": 0.657378223495702,
+        "paper": "0.657"
+      },
+      "overlap@100": {
+        "exact": 0.5667779369627507,
+        "paper": "0.567"
+      },
+      "overlap@1000": {
+        "exact": 0.5577823782234956,
+        "paper": "0.558"
+      },
+      "pearson": {
+        "exact": 0.7877805093463798,
+        "paper": "0.788"
+      },
+      "source_file": "artifacts/results/aug_eval/preservation_aug.json",
+      "spearman_rho": {
+        "exact": 0.7401509495500547,
+        "paper": "0.740"
+      }
+    },
+    {
+      "kendall_tau": {
+        "exact": 0.5291323019084435,
+        "paper": "0.529"
+      },
+      "method": "PCA",
+      "overlap@10": {
+        "exact": 0.6194412607449857,
+        "paper": "0.619"
+      },
+      "overlap@100": {
+        "exact": 0.5307063037249283,
+        "paper": "0.531"
+      },
+      "overlap@1000": {
+        "exact": 0.5340388252148998,
+        "paper": "0.534"
+      },
+      "pearson": {
+        "exact": 0.752147049843525,
+        "paper": "0.752"
+      },
+      "source_file": "artifacts/results/aug_eval/preservation_aug_pca_identity.json",
+      "spearman_rho": {
+        "exact": 0.7184611305122516,
+        "paper": "0.718"
+      }
+    },
+    {
+      "kendall_tau": {
+        "exact": 0.4653788156391764,
+        "paper": "0.465"
+      },
+      "method": "Random orthogonal",
+      "overlap@10": {
+        "exact": 0.6120200573065903,
+        "paper": "0.612"
+      },
+      "overlap@100": {
+        "exact": 0.5044656160458453,
+        "paper": "0.504"
+      },
+      "overlap@1000": {
+        "exact": 0.4855465616045845,
+        "paper": "0.486"
+      },
+      "pearson": {
+        "exact": 0.6919408802446662,
+        "paper": "0.692"
+      },
+      "source_file": "artifacts/results/aug_eval/preservation_aug_rest.json",
+      "spearman_rho": {
+        "exact": 0.6447519004267985,
+        "paper": "0.645"
+      }
+    },
+    {
+      "kendall_tau": {
+        "exact": 0.45644092410166903,
+        "paper": "0.456"
+      },
+      "method": "Identity",
+      "overlap@10": {
+        "exact": 0.6094412607449856,
+        "paper": "0.609"
+      },
+      "overlap@100": {
+        "exact": 0.4980945558739255,
+        "paper": "0.498"
+      },
+      "overlap@1000": {
+        "exact": 0.47984011461318055,
+        "paper": "0.480"
+      },
+      "pearson": {
+        "exact": 0.6695915304838089,
+        "paper": "0.670"
+      },
+      "source_file": "artifacts/results/aug_eval/preservation_aug_pca_identity.json",
+      "spearman_rho": {
+        "exact": 0.6346311879631101,
+        "paper": "0.635"
+      }
+    }
+  ],
+  "source_files": [
+    "artifacts/results/aug_eval/preservation_aug.json",
+    "artifacts/results/aug_eval/preservation_aug_pca_identity.json",
+    "artifacts/results/aug_eval/preservation_aug_rest.json"
+  ]
+}

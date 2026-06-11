@@ -1,0 +1,19 @@
+{
+  "config": {
+    "K": 100,
+    "n_judged": 6980,
+    "mapping": "pids_sorted_by_length",
+    "near_tie_threshold": 0.05,
+    "embeddings_dir": "/Users/anirudh.lakhotia/Documents/papers/sub-bit-compression/data/embeddings/msmarco/100k_aug"
+  },
+  "validation": {
+    "reranked_mrr@10": 0.8642122617910585,
+    "target_mrr@10": 0.8642,
+    "stage1_rr@10_mean": 0.8504842519760132
+  },
+  "n_resolved": 6811,
+  "n_missed": 169,
+  "resolved_median_margin": 3.6759395599365234,
+  "missed_median_margin": 0.5555820465087891,
+  "missed_frac_near_tie": 0.05917159763313609
+}

@@ -1,0 +1,63 @@
+{
+  "gap_to_fp32_after_k100": {
+    "exact": 6.333287851922886e-05,
+    "paper": "0.0001"
+  },
+  "paper_reference": "tab:rerank",
+  "random_R_k100_mrr@10": {
+    "exact": 0.8640626279164934,
+    "paper": "0.8641"
+  },
+  "rows": [
+    {
+      "method": "fp32 MaxSim only",
+      "mrr@10": {
+        "exact": 0.864110724519031,
+        "paper": "0.8641"
+      },
+      "recall@100": {
+        "exact": 0.9939828080229226,
+        "paper": "0.9940"
+      },
+      "recall@1000": {
+        "exact": 0.9989493791786055,
+        "paper": "0.9989"
+      }
+    },
+    {
+      "method": "Sign-coded single stage",
+      "mrr@10": {
+        "exact": 0.8496173306954092,
+        "paper": "0.8496"
+      },
+      "recall@100": {
+        "exact": 0.990974212034384,
+        "paper": "0.9910"
+      },
+      "recall@1000": {
+        "exact": 0.9971585482330467,
+        "paper": "0.9972"
+      }
+    },
+    {
+      "method": "Sign-coded -> fp32 rerank K=100",
+      "mrr@10": {
+        "exact": 0.8641740573975503,
+        "paper": "0.8642"
+      },
+      "recall@100": {
+        "exact": 0.990974212034384,
+        "paper": "0.9910"
+      },
+      "recall@1000": {
+        "exact": 0.9971585482330467,
+        "paper": "0.9972"
+      }
+    }
+  ],
+  "source_files": [
+    "artifacts/results/aug_eval/baseline_100k_aug_r64.json",
+    "artifacts/results/aug_eval/rerank_aug_fullfp32.json",
+    "artifacts/results/aug_eval/rerank_aug_fullfp32_randomR.json"
+  ]
+}

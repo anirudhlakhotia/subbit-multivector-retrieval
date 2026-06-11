@@ -1,0 +1,122 @@
+# Base production configuration for SubBit paper reproduction.
+#
+# Single source of truth. Running
+#   python training/train.py --config configs/base.yaml
+# reproduces the 50k MSE training run: SubBit r=64 on MS MARCO trained on
+# 50k triples sub-sampled from the 100k corpus cache. Best step is around
+# 15000; keep max_steps at 25000 so the cosine schedule finishes.
+#
+# Other scales (10k, 100k) are Makefile targets that override only what
+# differs per scale — never edit this file to run them.
+#
+# Do not set debug.enabled: true here — use --debug or `--config
+# configs/debug.yaml` for CI smoke.
+
+# Experiment identity. run.name routes outputs; override per experiment.
+run:
+  name: default
+  output_dir: outputs/${run.name}
+
+# Model — asymmetric float→binary with a token-dependent scale head
+# S(q) ∈ [1.0, 1.5] on top of the learned projection R.
+model:
+  input_dim: 128                        # ColBERT embedding dim
+  projected_dim: 64                     # r — bits/dim = r/input_dim (= 0.5)
+  init: "random_orthogonal"             # pca | random_orthogonal | identity
+  orthogonal_constraint: true           # Stiefel projection after each step
+  use_scale: true                       # token-dependent magnitude reconstruction
+  bias: false
+
+# Training schedule.
+training:
+  seed: 42
+  epochs: 10
+  batch_size: 32
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  warmup_steps: 250
+  max_steps: 25000                      # best MRR@10 typically lands near step 15000
+  gradient_clip: 1.0
+
+  # Optimizer / schedule
+  optimizer: "adamw"
+  scheduler: "cosine"
+
+  # Checkpointing
+  save_every: 2500
+  eval_every: 2500
+  patience: 10
+
+  # Straight-through estimator routing
+  ste_query: true
+  ste_doc: true
+
+  # SubBitLoss — see src/subbit/losses.py
+  loss:
+    boundary_topk_weight: 1.0           # Top-K basin shaping (set 0 to ablate)
+    boundary_fp_weight: 1.0             # Adversarial sentinel (set 0 to ablate)
+    boundary_k: 5                       # Top-K depth
+    ortho_weight: 0.001                 # ||R^T R − I||_F^2 regularizer
+
+# Data — 50k run trains on 50k triples sub-sampled from the 100k cache.
+# Override per-scale via Makefile / CLI; don't touch here.
+data:
+  dataset: "msmarco"
+  embeddings_dir: "data/embeddings/msmarco/100k"
+  num_train_samples: 50000              # triples used for training
+  pca_sample_size: 50000
+  max_query_tokens: 32
+  max_doc_tokens: 180
+  num_negatives: 1                      # hard negatives per positive
+  # Triples resolve in this order (training/train.py):
+  #   1. data.triples_path if set (not set here)
+  #   2. <embeddings_dir>/triples.tsv  <- what 50k_topk actually trained on
+  #   3. data.train_triples below (only if 2 is missing)
+  # (2) = data/embeddings/msmarco/100k/triples.tsv, written by encode_corpus.py:
+  # train qrels restricted to the 100k subset, 5 random negatives/positive
+  # (seed 42), no hard negatives. train_triples below points at the same file so
+  # the fallback is live, not a dead path.
+  train_triples: "data/embeddings/msmarco/100k/triples.tsv"
+  dev_queries: "data/msmarco/queries.dev.small.tsv"
+  dev_qrels: "data/msmarco/qrels.dev.small.tsv"
+  pca_train_split_only: true
+
+# Scoring
+scoring:
+  mode: "asymmetric"                    # asymmetric | symmetric
+
+# Evaluation
+evaluation:
+  metrics:
+    - "mrr@10"
+    - "recall@100"
+    - "recall@1000"
+  batch_size: 64
+  max_queries: 1000                     # limit eval during training for speed
+
+# Logging
+logging:
+  backend: "csv"                        # csv | wandb | tensorboard
+  project: "subbit-multivector-retrieval"
+  run_name: null                        # defaults to ${run.name}
+  log_every: 50
+
+# Hardware — match the settings that produced the 50k checkpoint.
+hardware:
+  device: "auto"                        # auto | cpu | mps | cuda
+  num_workers: 0
+  pin_memory: false
+
+# Paths — derive from run.output_dir so each experiment gets its own folder.
+paths:
+  output_dir: "${run.output_dir}"
+  checkpoint_dir: "${run.output_dir}/checkpoints"
+  results_dir: "${run.output_dir}/results"
+  plots_dir: "${run.output_dir}/plots"
+
+# Debug — OFF in production. Activated by --debug or configs/debug.yaml.
+debug:
+  enabled: false
+  num_passages: -1
+  num_queries: -1
+  max_steps: -1

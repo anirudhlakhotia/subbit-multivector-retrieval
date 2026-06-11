@@ -1,0 +1,79 @@
+{
+  "encoder": "pinecone/ConstBERT",
+  "corpus": "MS MARCO Passage 100k",
+  "n_queries": 6980,
+  "configs": [
+    "fp32",
+    "r16_random_sign",
+    "r32_random_sign",
+    "r64_random_sign"
+  ],
+  "random_R_seed": 42,
+  "n_bootstrap": 1000,
+  "per_config_rank_biserial": {
+    "fp32": {
+      "rank_biserial": 0.31056023807454947,
+      "ci_low": 0.27789066552424585,
+      "ci_high": 0.34028255373109983,
+      "ci_width": 0.062391888206853985,
+      "n_fail": 1482,
+      "n_succ": 5498
+    },
+    "r16_random_sign": {
+      "rank_biserial": 0.3164722389632766,
+      "ci_low": 0.2858874491113944,
+      "ci_high": 0.345535841700292,
+      "ci_width": 0.05964839258889759,
+      "n_fail": 5806,
+      "n_succ": 1174
+    },
+    "r32_random_sign": {
+      "rank_biserial": 0.3023140309177822,
+      "ci_low": 0.27745272373044844,
+      "ci_high": 0.32728640161040123,
+      "ci_width": 0.0498336778799528,
+      "n_fail": 3168,
+      "n_succ": 3812
+    },
+    "r64_random_sign": {
+      "rank_biserial": 0.3074265233340907,
+      "ci_low": 0.27922736153591005,
+      "ci_high": 0.33625991290797513,
+      "ci_width": 0.05703255137206509,
+      "n_fail": 1945,
+      "n_succ": 5035
+    }
+  },
+  "per_config_mrr10": {
+    "fp32": 0.8581125778869332,
+    "r16_random_sign": 0.2220616159548824,
+    "r32_random_sign": 0.6282944467185155,
+    "r64_random_sign": 0.7996778778369036
+  },
+  "per_config_recall_at": {
+    "fp32": {
+      "100": 0.9941260744985674,
+      "1000": 0.9988538681948425
+    },
+    "r16_random_sign": {
+      "100": 0.5789398280802293,
+      "1000": 0.8177650429799427
+    },
+    "r32_random_sign": {
+      "100": 0.9146131805157593,
+      "1000": 0.9760744985673352
+    },
+    "r64_random_sign": {
+      "100": 0.9828080229226361,
+      "1000": 0.9948424068767908
+    }
+  },
+  "pairwise_jaccards": {
+    "fp32__r16_random_sign": 0.24368600682593858,
+    "fp32__r32_random_sign": 0.40398550724637683,
+    "fp32__r64_random_sign": 0.6257115749525617,
+    "r16_random_sign__r32_random_sign": 0.5261904761904762,
+    "r16_random_sign__r64_random_sign": 0.32247056816242964,
+    "r32_random_sign__r64_random_sign": 0.543780193236715
+  }
+}

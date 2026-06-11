@@ -1,0 +1,400 @@
+{
+  "comparison": "sign(d) - random orthogonal R, r=64",
+  "metric": "ndcg@10",
+  "paper_reference": "tab:beir",
+  "rows": [
+    {
+      "ci95": [
+        {
+          "exact": 0.0114,
+          "paper": "0.0114"
+        },
+        {
+          "exact": 0.0525,
+          "paper": "0.0525"
+        }
+      ],
+      "corpus": "scifact",
+      "delta_sign_minus_random": {
+        "exact": 0.032,
+        "paper": "+0.032"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.6464095536491115,
+        "paper": "0.6464"
+      },
+      "n_queries": {
+        "exact": 300,
+        "paper": "300"
+      },
+      "p_holm": {
+        "exact": 0.0054,
+        "paper": "0.005"
+      },
+      "random_ndcg@10": {
+        "exact": 0.59880837067303,
+        "paper": "0.5988"
+      },
+      "retention_vs_fp32": {
+        "exact": 0.9757888181247668,
+        "paper": "97.6%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.6307592143798245,
+        "paper": "0.6308"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_scifact_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.035,
+          "paper": "-0.0350"
+        },
+        {
+          "exact": 0.0677,
+          "paper": "0.0677"
+        }
+      ],
+      "corpus": "trec-covid",
+      "delta_sign_minus_random": {
+        "exact": 0.0148,
+        "paper": "+0.015"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.8007188414193055,
+        "paper": "0.8007"
+      },
+      "n_queries": {
+        "exact": 50,
+        "paper": "50"
+      },
+      "p_holm": {
+        "exact": 1.0,
+        "paper": "1.0"
+      },
+      "random_ndcg@10": {
+        "exact": 0.7693092955426998,
+        "paper": "0.7693"
+      },
+      "retention_vs_fp32": {
+        "exact": 0.9792285171548427,
+        "paper": "97.9%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.7840867237409702,
+        "paper": "0.7841"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_trec-covid_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.0289,
+          "paper": "-0.0289"
+        },
+        {
+          "exact": -0.0003,
+          "paper": "-0.0003"
+        }
+      ],
+      "corpus": "fiqa",
+      "delta_sign_minus_random": {
+        "exact": -0.0145,
+        "paper": "-0.015"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.3472798053906342,
+        "paper": "0.3473"
+      },
+      "n_queries": {
+        "exact": 648,
+        "paper": "648"
+      },
+      "p_holm": {
+        "exact": 0.3552,
+        "paper": "0.4"
+      },
+      "random_ndcg@10": {
+        "exact": 0.314479360453864,
+        "paper": "0.3145"
+      },
+      "retention_vs_fp32": {
+        "exact": 0.8637083300880054,
+        "paper": "86.4%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.29994846078723214,
+        "paper": "0.2999"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_fiqa_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.0116,
+          "paper": "-0.0116"
+        },
+        {
+          "exact": 0.0343,
+          "paper": "0.0343"
+        }
+      ],
+      "corpus": "webis-touche2020",
+      "delta_sign_minus_random": {
+        "exact": 0.0111,
+        "paper": "+0.011"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.26965774468855885,
+        "paper": "0.2697"
+      },
+      "n_queries": {
+        "exact": 49,
+        "paper": "49"
+      },
+      "p_holm": {
+        "exact": 1.0,
+        "paper": "1.0"
+      },
+      "random_ndcg@10": {
+        "exact": 0.26590001533036783,
+        "paper": "0.2659"
+      },
+      "retention_vs_fp32": {
+        "exact": 1.0273361924155304,
+        "paper": "102.7%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.27702916068370326,
+        "paper": "0.2770"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_webis-touche2020_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.0084,
+          "paper": "-0.0084"
+        },
+        {
+          "exact": 0.0007,
+          "paper": "0.0007"
+        }
+      ],
+      "corpus": "quora",
+      "delta_sign_minus_random": {
+        "exact": -0.0039,
+        "paper": "-0.004"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.8524973480614324,
+        "paper": "0.8525"
+      },
+      "n_queries": {
+        "exact": 5000,
+        "paper": "5000"
+      },
+      "p_holm": {
+        "exact": 0.679,
+        "paper": "0.7"
+      },
+      "random_ndcg@10": {
+        "exact": 0.8277755076704676,
+        "paper": "0.8278"
+      },
+      "retention_vs_fp32": {
+        "exact": 0.9664522385338972,
+        "paper": "96.6%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.8238979703781822,
+        "paper": "0.8239"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_quora_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.0077,
+          "paper": "-0.0077"
+        },
+        {
+          "exact": 0.0044,
+          "paper": "0.0044"
+        }
+      ],
+      "corpus": "scidocs",
+      "delta_sign_minus_random": {
+        "exact": -0.0017,
+        "paper": "-0.002"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.15814186289091525,
+        "paper": "0.1581"
+      },
+      "n_queries": {
+        "exact": 1000,
+        "paper": "1000"
+      },
+      "p_holm": {
+        "exact": 1.0,
+        "paper": "1.0"
+      },
+      "random_ndcg@10": {
+        "exact": 0.14199519135140498,
+        "paper": "0.1420"
+      },
+      "retention_vs_fp32": {
+        "exact": 0.8869776381846198,
+        "paper": "88.7%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.1402682960451,
+        "paper": "0.1403"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_scidocs_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.0064,
+          "paper": "-0.0064"
+        },
+        {
+          "exact": 0.0092,
+          "paper": "0.0092"
+        }
+      ],
+      "corpus": "nq",
+      "delta_sign_minus_random": {
+        "exact": 0.0015,
+        "paper": "+0.002"
+      },
+      "fp32_ndcg@10": null,
+      "n_queries": {
+        "exact": 3452,
+        "paper": "3452"
+      },
+      "p_holm": {
+        "exact": 1.0,
+        "paper": "1.0"
+      },
+      "random_ndcg@10": {
+        "exact": 0.5311760507206705,
+        "paper": "0.5312"
+      },
+      "retention_vs_fp32": null,
+      "sign_ndcg@10": {
+        "exact": 0.5326712814724334,
+        "paper": "0.5327"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_nq_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.0124,
+          "paper": "-0.0124"
+        },
+        {
+          "exact": 0.0095,
+          "paper": "0.0095"
+        }
+      ],
+      "corpus": "nfcorpus",
+      "delta_sign_minus_random": {
+        "exact": -0.0014,
+        "paper": "-0.001"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.33007282190807846,
+        "paper": "0.3301"
+      },
+      "n_queries": {
+        "exact": 323,
+        "paper": "323"
+      },
+      "p_holm": {
+        "exact": 1.0,
+        "paper": "1.0"
+      },
+      "random_ndcg@10": {
+        "exact": 0.31396460955486766,
+        "paper": "0.3140"
+      },
+      "retention_vs_fp32": {
+        "exact": 0.9468119387704024,
+        "paper": "94.7%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.3125168884462055,
+        "paper": "0.3125"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_nfcorpus_sign_vs_random_r64.json"
+    },
+    {
+      "ci95": [
+        {
+          "exact": -0.0097,
+          "paper": "-0.0097"
+        },
+        {
+          "exact": 0.0078,
+          "paper": "0.0078"
+        }
+      ],
+      "corpus": "arguana",
+      "delta_sign_minus_random": {
+        "exact": -0.0009,
+        "paper": "-0.001"
+      },
+      "fp32_ndcg@10": {
+        "exact": 0.3336229072507723,
+        "paper": "0.3336"
+      },
+      "n_queries": {
+        "exact": 1406,
+        "paper": "1406"
+      },
+      "p_holm": {
+        "exact": 1.0,
+        "paper": "1.0"
+      },
+      "random_ndcg@10": {
+        "exact": 0.2879640907884954,
+        "paper": "0.2880"
+      },
+      "retention_vs_fp32": {
+        "exact": 0.8604533023762504,
+        "paper": "86.0%"
+      },
+      "sign_ndcg@10": {
+        "exact": 0.2870669322922925,
+        "paper": "0.2871"
+      },
+      "source_file": "artifacts/results/beir_ci/beir_arguana_sign_vs_random_r64.json"
+    }
+  ],
+  "source_files": [
+    "artifacts/results/beir_ci/beir9_r64_ci.json"
+  ],
+  "summary": {
+    "holm_significant_corpora": {
+      "exact": 1,
+      "paper": "1"
+    },
+    "mean_random_retention_vs_fp32": {
+      "exact": 0.9327484801630683,
+      "paper": "93.3%"
+    },
+    "mean_sign_retention_vs_fp32": {
+      "exact": 0.9383446219560394,
+      "paper": "93.8%"
+    },
+    "median_abs_delta": {
+      "exact": 0.0039,
+      "paper": "0.004"
+    }
+  }
+}

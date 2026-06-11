@@ -1,0 +1,65 @@
+{
+  "argmax_flip": {
+    "high_margin_tail": {
+      "exact": 0.004996418338108883,
+      "paper": "0.50%"
+    },
+    "low_margin_flip_rate": {
+      "exact": 0.7129641295153075,
+      "paper": "71.30%"
+    },
+    "low_margin_survival_rate": {
+      "exact": 0.2870358704846925,
+      "paper": "28.70%"
+    }
+  },
+  "paper_reference": "fig:argmax, tab:ranklanding, and fig:residual",
+  "rank_landing": {
+    "median_rank": {
+      "exact": 7,
+      "paper": "7"
+    },
+    "n_low_margin_flipped": {
+      "exact": 158452,
+      "paper": "158,452"
+    },
+    "rank_2": {
+      "exact": 18.9,
+      "paper": "18.9%"
+    },
+    "rank_3_5": {
+      "exact": 25.4,
+      "paper": "25.4%"
+    },
+    "rank_6_10": {
+      "exact": 17.0,
+      "paper": "17.0%"
+    },
+    "rank_gt10": {
+      "exact": 38.7,
+      "paper": "38.7%"
+    }
+  },
+  "residual": {
+    "frac_within_0_05": {
+      "exact": 0.62,
+      "paper": "62.0%"
+    },
+    "median_delta_fp32": {
+      "exact": -0.0353,
+      "paper": "-0.0353"
+    },
+    "per_query_losing_at_most_10_percent": {
+      "exact": 0.9855300859598853,
+      "paper": "98.6%"
+    },
+    "per_query_median_aggregate_loss": {
+      "exact": 0.04161552426961669,
+      "paper": "4.2%"
+    }
+  },
+  "source_files": [
+    "artifacts/results/diagnostics/c6_decomposition_aug100k_r64.json",
+    "artifacts/results/diagnostics/c6_rank_landing_aug100k_r64.json"
+  ]
+}

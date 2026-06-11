@@ -1,0 +1,20 @@
+{
+  "description": "fp32 rank of the sign-coded argmax doc-token, among flipped low-margin q-tokens (margin<0.2, preserved=False), aug 100k r=64 random-orth.",
+  "source_substrate": "outputs/c6_flip_residuals_aug100k_r64.npz (sign_winner_rank field)",
+  "n_low_margin_flipped": 158452,
+  "rank_landing": {
+    "rank_2_pct": 18.9,
+    "rank_3_5_pct": 25.4,
+    "rank_6_10_pct": 17.0,
+    "rank_gt10_pct": 38.7,
+    "cum_le5_pct": 44.3,
+    "cum_le10_pct": 61.3,
+    "median_rank": 7,
+    "max_rank": 5451
+  },
+  "residual_among_same": {
+    "median_delta_fp32": -0.0353,
+    "frac_within_0_05": 0.62
+  },
+  "reading": "substitute is usually NOT the runner-up (only 18.9% land at rank 2; 38.7% land beyond rank 10; median rank 7) yet the score residual is near zero -- the low-margin head is a dense plateau, so rank is a misleading lens and the score residual is the right one."
+}

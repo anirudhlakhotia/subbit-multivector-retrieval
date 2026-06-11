@@ -1,0 +1,24 @@
+{
+  "method": "itq",
+  "R_path": "/itq/R_r64.pt",
+  "encoder": "colbert-ir/colbertv2.0",
+  "corpus": "msmarco-passage (full)",
+  "queries": "msmarco-passage/dev/small",
+  "n_docs": 8841823,
+  "n_total_tokens": 597500043,
+  "n_queries_evaluated": 6980,
+  "r": 64,
+  "use_scale": false,
+  "scoring": "asymmetric",
+  "doc_chunk": 8192,
+  "query_batch": 128,
+  "top_k": 1000,
+  "metrics": {
+    "mrr@10": 0.36869661618229077,
+    "recall@100": 0.889052053486151,
+    "recall@1000": 0.9734360076408787
+  },
+  "wall_clock_sec": {
+    "sweep": 3214.9185144901276
+  }
+}

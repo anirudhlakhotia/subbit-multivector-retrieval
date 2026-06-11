@@ -1,0 +1,31 @@
+{
+  "config": {
+    "embeddings_dir": "data/embeddings/msmarco/100k_aug",
+    "checkpoint": "outputs/sweep_10k/r64/checkpoints/best.pt",
+    "r": 64,
+    "k_values": [
+      10,
+      100,
+      1000
+    ],
+    "max_queries": -1,
+    "max_docs": -1,
+    "pca_fit_tokens": 200000,
+    "device": "cpu"
+  },
+  "rows": [
+    {
+      "label": "random_projection",
+      "spearman_mean": 0.6447519004267985,
+      "spearman_std": 0.06154369248203729,
+      "kendall_mean": 0.4653788156391764,
+      "pearson_flat": 0.6919408802446662,
+      "overlap_at_k": {
+        "10": 0.6120200573065903,
+        "100": 0.5044656160458453,
+        "1000": 0.4855465616045845
+      },
+      "n_queries": 6980
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "paper_reference": "PLAID storage-accounting prose",
+  "source_files": [],
+  "values": {
+    "bare_ratio_vs_8_btok": {
+      "exact": 4.25,
+      "paper": "4.25"
+    },
+    "codebook_bytes_per_token_100k": {
+      "exact": 2.49289985141159,
+      "paper": "2.5"
+    },
+    "codebook_bytes_per_token_8m": {
+      "exact": 0.028102539363484086,
+      "paper": "0.03"
+    },
+    "msmarco_100k_tokens_million": {
+      "exact": 6.73,
+      "paper": "6.73"
+    },
+    "msmarco_8m_tokens_million": {
+      "exact": 597,
+      "paper": "597"
+    },
+    "plaid_b2_amortized_bytes_per_token_100k": {
+      "exact": 36.49289985141159,
+      "paper": "36.5"
+    },
+    "plaid_b2_bare_bytes_per_token": {
+      "exact": 34,
+      "paper": "34"
+    },
+    "plaid_codebooks_mib": {
+      "exact": 16,
+      "paper": "16"
+    },
+    "ratio_vs_8_btok_at_100k": {
+      "exact": 4.561612481426449,
+      "paper": "4.6"
+    }
+  }
+}

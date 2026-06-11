@@ -1,0 +1,83 @@
+{
+  "full_scale_k100": {
+    "ci95": [
+      {
+        "exact": -0.001208,
+        "paper": "-0.0012"
+      },
+      {
+        "exact": 0.000178,
+        "paper": "0.0002"
+      }
+    ],
+    "delta_trained_minus_random": {
+      "exact": -0.000502,
+      "paper": "-0.0005"
+    },
+    "n_queries": {
+      "exact": 6980,
+      "paper": "6,980"
+    },
+    "random_R_mrr@10": {
+      "exact": 0.4001533860917821,
+      "paper": "0.4002"
+    },
+    "trained_R_mrr@10": {
+      "exact": 0.39965098694683265,
+      "paper": "0.3997"
+    }
+  },
+  "full_scale_k1000": {
+    "ci95": [
+      {
+        "exact": -0.000547,
+        "paper": "-0.0005"
+      },
+      {
+        "exact": 0.000626,
+        "paper": "0.0006"
+      }
+    ],
+    "delta_trained_minus_random": {
+      "exact": 4.5e-05,
+      "paper": "0.0000"
+    },
+    "random_R_mrr@10": {
+      "exact": 0.4000575908491386,
+      "paper": "0.4001"
+    },
+    "trained_R_mrr@10": {
+      "exact": 0.4001030154182024,
+      "paper": "0.4001"
+    }
+  },
+  "k100_residual_misses": {
+    "missed_median_margin": {
+      "exact": 0.5555820465087891,
+      "paper": "0.56"
+    },
+    "n_missed": {
+      "exact": 169,
+      "paper": "169"
+    },
+    "n_total": {
+      "exact": 6980,
+      "paper": "6,980"
+    },
+    "resolved_median_margin": {
+      "exact": 3.6759395599365234,
+      "paper": "3.68"
+    },
+    "resolved_to_missed_margin_ratio": {
+      "exact": 6.616375714506411,
+      "paper": "6.6"
+    }
+  },
+  "paper_reference": "full-scale rerank and residual-miss prose",
+  "source_files": [
+    "artifacts/results/full_msmarco/rerank_8m_rand_plus_scale_K_sweep.json",
+    "artifacts/results/full_msmarco/rerank_8m_subbit_K_sweep.json",
+    "artifacts/results/full_msmarco/bootstrap_rerank_8m.json",
+    "artifacts/results/aug_eval/missed_resolved_margin_aug100k.json"
+  ]
+}

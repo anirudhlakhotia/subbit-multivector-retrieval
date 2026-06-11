@@ -1,0 +1,39 @@
+# Debug configuration — overrides base.yaml for fast local iteration.
+# Usage: python training/train.py --config configs/base.yaml --config configs/debug.yaml
+# Or:    python training/train.py --config configs/base.yaml --debug
+
+# Smaller data subset
+data:
+  embeddings_dir: "data/embeddings/msmarco/debug"
+  num_train_samples: 5000
+  pca_sample_size: 50000
+
+# Faster training
+training:
+  epochs: 5
+  warmup_steps: 100
+  save_every: 200
+  eval_every: 100
+  max_steps: 500
+
+# Local-friendly settings
+logging:
+  backend: "csv"
+  project: "subbit-multivector-retrieval-debug"
+
+hardware:
+  device: "mps"
+  num_workers: 0
+  pin_memory: false
+
+paths:
+  output_dir: "outputs/debug"
+  checkpoint_dir: "outputs/debug/checkpoints"
+  results_dir: "outputs/debug/results"
+  plots_dir: "outputs/debug/plots"
+
+debug:
+  enabled: true
+  num_passages: 5000
+  num_queries: 500
+  max_steps: 500

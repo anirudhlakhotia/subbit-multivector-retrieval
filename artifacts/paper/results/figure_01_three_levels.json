@@ -1,0 +1,61 @@
+{
+  "paper_reference": "fig:levels",
+  "relevant_document_recall_at_10": {
+    "exact": 0.9667621776504298,
+    "paper": "96.7%"
+  },
+  "score_correlation": {
+    "pearson": {
+      "exact": 0.550019383430481,
+      "paper": "0.550"
+    },
+    "spearman_rho": {
+      "exact": 0.5216416670620044,
+      "paper": "0.522"
+    }
+  },
+  "source_files": [
+    "artifacts/results/diagnostics/geometry_fidelity_vs_argmax.json",
+    "artifacts/results/aug_eval/rec_at_10_trained_aug.json",
+    "artifacts/results/aug_eval/worst5_fp32_aug100k.json",
+    "artifacts/results/aug_eval/preservation_aug.json",
+    "artifacts/results/aug_eval/preservation_aug_pca_identity.json",
+    "artifacts/results/aug_eval/preservation_aug_rest.json"
+  ],
+  "token_neighbor_overlap": {
+    "k10": {
+      "exact": 0.4821,
+      "paper": "48.2%"
+    },
+    "k1000": {
+      "exact": 0.23113499999999998,
+      "paper": "23.1%"
+    },
+    "random_baseline_k1000": {
+      "exact": 0.005,
+      "paper": "0.5%"
+    }
+  },
+  "worst_5_percent_queries": {
+    "dropped": {
+      "exact": 27,
+      "paper": "27"
+    },
+    "mean_rank_shift": {
+      "exact": -0.5266566590727116,
+      "paper": "-0.527"
+    },
+    "n_queries": {
+      "exact": 349,
+      "paper": "349"
+    },
+    "still_top10": {
+      "exact": 322,
+      "paper": "322"
+    },
+    "still_top10_percent": {
+      "exact": 92.3,
+      "paper": "92.3%"
+    }
+  }
+}

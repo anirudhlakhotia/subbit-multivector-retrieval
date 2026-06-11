@@ -1,0 +1,432 @@
+{
+  "bootstrap": {
+    "r64_trained_minus_random": {
+      "ci95": [
+        {
+          "exact": -0.006021370434397057,
+          "paper": "-0.0060"
+        },
+        {
+          "exact": 0.005815027142023631,
+          "paper": "0.0058"
+        }
+      ],
+      "delta_mrr@10": {
+        "exact": -5.5600889560827895e-05,
+        "paper": "-0.0001"
+      },
+      "source_file": "artifacts/results/full_msmarco/bootstrap_r64_8m.json"
+    }
+  },
+  "paper_reference": "tab:pareto and fig:pareto",
+  "rows": [
+    {
+      "bytes_per_token": {
+        "exact": 512,
+        "paper": "512"
+      },
+      "group": "MS MARCO 100k",
+      "method": "fp32 ColBERTv2",
+      "mrr@10": {
+        "exact": 0.864110724519031,
+        "paper": "0.8641"
+      },
+      "recall@100": {
+        "exact": 0.9939828080229226,
+        "paper": "0.994"
+      },
+      "recall@1000": {
+        "exact": 0.9989493791786055,
+        "paper": "0.9989"
+      },
+      "source_file": "artifacts/results/aug_eval/rerank_aug_fullfp32.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 66,
+        "paper": "66"
+      },
+      "group": "MS MARCO 100k",
+      "method": "PLAID b=4",
+      "mrr@10": {
+        "exact": 0.8627256446991376,
+        "paper": "0.8627"
+      },
+      "recall@100": {
+        "exact": 0.9939111747851003,
+        "paper": "0.994"
+      },
+      "recall@1000": {
+        "exact": 0.9989493791786055,
+        "paper": "0.9989"
+      },
+      "source_file": "artifacts/results/aug_eval/table_plaid_noscale_aug.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 34,
+        "paper": "34"
+      },
+      "group": "MS MARCO 100k",
+      "method": "PLAID b=2",
+      "mrr@10": {
+        "exact": 0.8593133442488723,
+        "paper": "0.8593"
+      },
+      "recall@100": {
+        "exact": 0.9934336198662846,
+        "paper": "0.993"
+      },
+      "recall@1000": {
+        "exact": 0.9988061127029607,
+        "paper": "0.9988"
+      },
+      "source_file": "artifacts/results/aug_eval/table_plaid_noscale_aug.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 18,
+        "paper": "18"
+      },
+      "group": "MS MARCO 100k",
+      "method": "PLAID b=1",
+      "mrr@10": {
+        "exact": 0.8497807226997744,
+        "paper": "0.8498"
+      },
+      "recall@100": {
+        "exact": 0.9929321872015282,
+        "paper": "0.993"
+      },
+      "recall@1000": {
+        "exact": 0.998662846227316,
+        "paper": "0.9987"
+      },
+      "source_file": "artifacts/results/aug_eval/table_plaid_noscale_aug.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 100k",
+      "method": "ITQ r=64 asym",
+      "mrr@10": {
+        "exact": 0.8319236935461853,
+        "paper": "0.8319"
+      },
+      "recall@100": {
+        "exact": 0.987070200573066,
+        "paper": "0.9871"
+      },
+      "recall@1000": {
+        "exact": 0.9957736389684814,
+        "paper": "0.9958"
+      },
+      "source_file": "artifacts/results/aug_eval/itq_100k_aug.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 100k",
+      "method": "PQ 8x8 ADC",
+      "mrr@10": {
+        "exact": 0.8329942693409722,
+        "paper": "0.8330"
+      },
+      "recall@100": {
+        "exact": 0.9866523400191023,
+        "paper": "0.9867"
+      },
+      "recall@1000": {
+        "exact": 0.9953915950334288,
+        "paper": "0.9954"
+      },
+      "source_file": "artifacts/results/aug_eval/pq_opq_100k_aug.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 100k",
+      "method": "OPQ 8x8",
+      "mrr@10": {
+        "exact": 0.8047795856642559,
+        "paper": "0.8048"
+      },
+      "recall@100": {
+        "exact": 0.9802053486150908,
+        "paper": "0.9802"
+      },
+      "recall@1000": {
+        "exact": 0.9947468958930277,
+        "paper": "0.9947"
+      },
+      "source_file": "artifacts/results/aug_eval/pq_opq_100k_aug.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 24,
+        "paper": "24"
+      },
+      "group": "MS MARCO 100k",
+      "method": "RaBitQ asym",
+      "mrr@10": {
+        "exact": 0.8582076909082622,
+        "paper": "0.8582"
+      },
+      "recall@100": {
+        "exact": 0.9925023877745941,
+        "paper": "0.9925"
+      },
+      "recall@1000": {
+        "exact": 0.998233046800382,
+        "paper": "0.9982"
+      },
+      "source_file": "artifacts/results/aug_eval/rabitq_100k_aug.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 100k",
+      "method": "Trained R r=64 asym",
+      "mrr@10": {
+        "exact": 0.8496173306954092,
+        "paper": "0.8496"
+      },
+      "recall@100": {
+        "exact": 0.990974212034384,
+        "paper": "0.991"
+      },
+      "recall@1000": {
+        "exact": 0.9971585482330467,
+        "paper": "0.9972"
+      },
+      "source_file": "artifacts/results/aug_eval/baseline_100k_aug_r64.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 100k",
+      "method": "Random orthogonal R r=64 asym",
+      "mrr@10": {
+        "exact": 0.8393475690180545,
+        "paper": "0.8393"
+      },
+      "recall@100": {
+        "exact": 0.9897086914995225,
+        "paper": "0.990"
+      },
+      "recall@1000": {
+        "exact": 0.9962989493791785,
+        "paper": "0.9963"
+      },
+      "source_file": "artifacts/results/aug_eval/baseline_100k_aug_r64.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 512,
+        "paper": "512"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "fp32 ColBERTv2 external reference",
+      "mrr@10": {
+        "exact": 0.397,
+        "paper": "0.397"
+      },
+      "recall@100": null,
+      "recall@1000": null,
+      "source_file": null
+    },
+    {
+      "bytes_per_token": {
+        "exact": 24,
+        "paper": "24"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "RaBitQ",
+      "mrr@10": {
+        "exact": 0.39008044526311086,
+        "paper": "0.390"
+      },
+      "recall@100": {
+        "exact": 0.908655682903534,
+        "paper": "0.909"
+      },
+      "recall@1000": {
+        "exact": 0.9816260744985673,
+        "paper": "0.982"
+      },
+      "source_file": "artifacts/results/full_msmarco/rabitq_full_msmarco.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "ITQ r=64",
+      "mrr@10": {
+        "exact": 0.36869661618229077,
+        "paper": "0.369"
+      },
+      "recall@100": {
+        "exact": 0.889052053486151,
+        "paper": "0.889"
+      },
+      "recall@1000": {
+        "exact": 0.9734360076408787,
+        "paper": "0.973"
+      },
+      "source_file": "artifacts/results/full_msmarco/itq_full_msmarco.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "Trained R r=64 + scale",
+      "mrr@10": {
+        "exact": 0.37229937145908104,
+        "paper": "0.3723"
+      },
+      "recall@100": {
+        "exact": 0.900322349617167,
+        "paper": "0.900"
+      },
+      "recall@1000": {
+        "exact": 0.9752984718470313,
+        "paper": "0.975"
+      },
+      "source_file": "artifacts/results/full_msmarco/bootstrap_r64_8m.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "Random orthogonal R r=64 + scale",
+      "mrr@10": {
+        "exact": 0.37235497234864184,
+        "paper": "0.3724"
+      },
+      "recall@100": {
+        "exact": 0.8916189112174818,
+        "paper": "0.892"
+      },
+      "recall@1000": {
+        "exact": 0.9731852913355418,
+        "paper": "0.973"
+      },
+      "source_file": "artifacts/results/full_msmarco/bootstrap_r64_8m.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "Identity R r=64 + scale",
+      "mrr@10": {
+        "exact": 0.37348262609723987,
+        "paper": "0.3735"
+      },
+      "recall@100": {
+        "exact": 0.8935530085959886,
+        "paper": "0.894"
+      },
+      "recall@1000": {
+        "exact": 0.9749761222540593,
+        "paper": "0.975"
+      },
+      "source_file": "artifacts/results/full_msmarco/identity_plus_scale_full_msmarco.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 16,
+        "paper": "16"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "Trained R r=128 + scale",
+      "mrr@10": {
+        "exact": 0.38891401737390324,
+        "paper": "0.3889"
+      },
+      "recall@100": {
+        "exact": 0.9123925501432666,
+        "paper": "0.912"
+      },
+      "recall@1000": {
+        "exact": 0.9815305635148042,
+        "paper": "0.982"
+      },
+      "source_file": "artifacts/results/full_msmarco/subbit_r128_full_msmarco.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 16,
+        "paper": "16"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "Random orthogonal R r=128 + scale",
+      "mrr@10": {
+        "exact": 0.39163420430254287,
+        "paper": "0.3916"
+      },
+      "recall@100": {
+        "exact": 0.9109837631327603,
+        "paper": "0.911"
+      },
+      "recall@1000": {
+        "exact": 0.9828557784145178,
+        "paper": "0.983"
+      },
+      "source_file": "artifacts/results/full_msmarco/rand128_plus_scale_full_msmarco.json"
+    },
+    {
+      "bytes_per_token": {
+        "exact": 16,
+        "paper": "16"
+      },
+      "group": "MS MARCO 8.8M",
+      "method": "Identity R r=128 + scale",
+      "mrr@10": {
+        "exact": 0.3921279619775325,
+        "paper": "0.3921"
+      },
+      "recall@100": {
+        "exact": 0.9103510028653296,
+        "paper": "0.910"
+      },
+      "recall@1000": {
+        "exact": 0.9829751671442215,
+        "paper": "0.983"
+      },
+      "source_file": "artifacts/results/full_msmarco/identity128_plus_scale_full_msmarco.json"
+    }
+  ],
+  "source_files": [
+    "artifacts/results/aug_eval/baseline_100k_aug_r64.json",
+    "artifacts/results/aug_eval/table_plaid_noscale_aug.json",
+    "artifacts/results/aug_eval/itq_100k_aug.json",
+    "artifacts/results/aug_eval/pq_opq_100k_aug.json",
+    "artifacts/results/aug_eval/rabitq_100k_aug.json",
+    "artifacts/results/aug_eval/rerank_aug_fullfp32.json",
+    "artifacts/results/full_msmarco/bootstrap_r64_8m.json",
+    "artifacts/results/full_msmarco/rabitq_full_msmarco.json",
+    "artifacts/results/full_msmarco/itq_full_msmarco.json",
+    "artifacts/results/full_msmarco/identity_plus_scale_full_msmarco.json",
+    "artifacts/results/full_msmarco/subbit_r128_full_msmarco.json",
+    "artifacts/results/full_msmarco/rand128_plus_scale_full_msmarco.json",
+    "artifacts/results/full_msmarco/identity128_plus_scale_full_msmarco.json"
+  ]
+}

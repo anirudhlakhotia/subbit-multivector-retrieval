@@ -1,0 +1,366 @@
+{
+  "run_metadata": {
+    "timestamp_utc": "2026-06-11T08:20:18Z",
+    "python_version": "3.9.6",
+    "platform": "macOS-26.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "hostname": "C650DX4G5Q",
+    "git_sha": "af2b960",
+    "git_dirty": true,
+    "torch_version": "2.8.0",
+    "cuda_available": false,
+    "mps_available": true,
+    "config": {
+      "benchmark": "latency_interleaved",
+      "group": "rerank",
+      "rounds": 5,
+      "num_queries": 500,
+      "query_tokens": 32,
+      "query_embeddings": "data/embeddings/msmarco/100k/query_embeddings_aug.pt",
+      "num_docs": 100000,
+      "top_k": 1000,
+      "seed": 42,
+      "device": "cpu",
+      "threads": 8,
+      "plaid_centroids": 32768,
+      "plaid_residual_bits": [
+        1,
+        2,
+        4
+      ],
+      "checkpoint": null,
+      "design": "1 warmup round + N timed rounds, per-round shuffled method order; per-pass statistic = per-query MEDIAN (stall-robust, per W4 finding)"
+    }
+  },
+  "environment": {
+    "power": "Now drawing from 'AC Power'",
+    "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "torch_threads": 8
+  },
+  "method_meta": {
+    "stage1 sign-coded full scan": {
+      "projection": "random_orthogonal",
+      "r": 64,
+      "eval_mode": "float",
+      "bytes_per_token": 8,
+      "stage": "candidate_generation"
+    },
+    "fp32 full scan (reference)": {
+      "r": 128,
+      "eval_mode": "float",
+      "bytes_per_token": 512,
+      "stage": "full_exhaustive"
+    },
+    "stage2 fp32 rerank K=100": {
+      "stage": "rerank",
+      "K": 100,
+      "eval_mode": "float"
+    },
+    "stage2 fp32 rerank K=256": {
+      "stage": "rerank",
+      "K": 256,
+      "eval_mode": "float"
+    },
+    "stage2 fp32 rerank K=1024": {
+      "stage": "rerank",
+      "K": 1024,
+      "eval_mode": "float"
+    }
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "order": [
+        "stage2 fp32 rerank K=256",
+        "fp32 full scan (reference)",
+        "stage2 fp32 rerank K=100",
+        "stage2 fp32 rerank K=1024",
+        "stage1 sign-coded full scan"
+      ],
+      "results": {
+        "stage2 fp32 rerank K=256": {
+          "median_ms": 2.0705834999999997,
+          "mean_ms": 2.0950176039999997,
+          "p95_ms": 2.36593545,
+          "max_ms": 2.98275
+        },
+        "fp32 full scan (reference)": {
+          "median_ms": 150.641,
+          "mean_ms": 158.93545307,
+          "p95_ms": 200.4424229,
+          "max_ms": 230.181917
+        },
+        "stage2 fp32 rerank K=100": {
+          "median_ms": 1.2647085,
+          "mean_ms": 1.2857827459999998,
+          "p95_ms": 1.4855143,
+          "max_ms": 3.033959
+        },
+        "stage2 fp32 rerank K=1024": {
+          "median_ms": 9.204083,
+          "mean_ms": 9.343342414,
+          "p95_ms": 10.430342,
+          "max_ms": 23.851917
+        },
+        "stage1 sign-coded full scan": {
+          "median_ms": 147.564521,
+          "mean_ms": 152.293488752,
+          "p95_ms": 200.15154135,
+          "max_ms": 341.874125
+        }
+      },
+      "t_start": 1781165281.541315
+    },
+    {
+      "round": 2,
+      "order": [
+        "stage2 fp32 rerank K=256",
+        "stage2 fp32 rerank K=100",
+        "stage1 sign-coded full scan",
+        "stage2 fp32 rerank K=1024",
+        "fp32 full scan (reference)"
+      ],
+      "results": {
+        "stage2 fp32 rerank K=256": {
+          "median_ms": 2.3266875000000002,
+          "mean_ms": 2.38057348,
+          "p95_ms": 2.9452568999999995,
+          "max_ms": 4.785542
+        },
+        "stage2 fp32 rerank K=100": {
+          "median_ms": 0.8965,
+          "mean_ms": 0.916842066,
+          "p95_ms": 1.0092225999999997,
+          "max_ms": 2.12775
+        },
+        "stage1 sign-coded full scan": {
+          "median_ms": 124.58102099999999,
+          "mean_ms": 126.39109789599999,
+          "p95_ms": 138.85030239999998,
+          "max_ms": 172.676959
+        },
+        "stage2 fp32 rerank K=1024": {
+          "median_ms": 8.681875,
+          "mean_ms": 8.896208901999998,
+          "p95_ms": 10.20572675,
+          "max_ms": 15.966541
+        },
+        "fp32 full scan (reference)": {
+          "median_ms": 145.950667,
+          "mean_ms": 149.172110408,
+          "p95_ms": 161.962225,
+          "max_ms": 393.511625
+        }
+      },
+      "t_start": 1781165443.490595
+    },
+    {
+      "round": 3,
+      "order": [
+        "stage2 fp32 rerank K=256",
+        "fp32 full scan (reference)",
+        "stage2 fp32 rerank K=100",
+        "stage1 sign-coded full scan",
+        "stage2 fp32 rerank K=1024"
+      ],
+      "results": {
+        "stage2 fp32 rerank K=256": {
+          "median_ms": 1.9878330000000002,
+          "mean_ms": 2.075760072,
+          "p95_ms": 2.5483586499999995,
+          "max_ms": 3.219458
+        },
+        "fp32 full scan (reference)": {
+          "median_ms": 146.561979,
+          "mean_ms": 147.901352834,
+          "p95_ms": 156.49798189999998,
+          "max_ms": 194.575666
+        },
+        "stage2 fp32 rerank K=100": {
+          "median_ms": 0.9315205,
+          "mean_ms": 0.9401375,
+          "p95_ms": 1.05296185,
+          "max_ms": 1.470583
+        },
+        "stage1 sign-coded full scan": {
+          "median_ms": 121.2650625,
+          "mean_ms": 122.74951771,
+          "p95_ms": 131.40006215,
+          "max_ms": 169.255584
+        },
+        "stage2 fp32 rerank K=1024": {
+          "median_ms": 8.366646,
+          "mean_ms": 8.446658986,
+          "p95_ms": 9.3045399,
+          "max_ms": 10.982667
+        }
+      },
+      "t_start": 1781165587.387645
+    },
+    {
+      "round": 4,
+      "order": [
+        "fp32 full scan (reference)",
+        "stage2 fp32 rerank K=100",
+        "stage2 fp32 rerank K=256",
+        "stage2 fp32 rerank K=1024",
+        "stage1 sign-coded full scan"
+      ],
+      "results": {
+        "fp32 full scan (reference)": {
+          "median_ms": 148.467396,
+          "mean_ms": 152.249974514,
+          "p95_ms": 174.1503702,
+          "max_ms": 222.058875
+        },
+        "stage2 fp32 rerank K=100": {
+          "median_ms": 1.1809375,
+          "mean_ms": 1.298898674,
+          "p95_ms": 1.9884961499999994,
+          "max_ms": 4.695709
+        },
+        "stage2 fp32 rerank K=256": {
+          "median_ms": 2.3265835,
+          "mean_ms": 2.37629785,
+          "p95_ms": 3.0375309,
+          "max_ms": 5.028166
+        },
+        "stage2 fp32 rerank K=1024": {
+          "median_ms": 8.430666500000001,
+          "mean_ms": 8.487266816,
+          "p95_ms": 9.1329351,
+          "max_ms": 10.120958
+        },
+        "stage1 sign-coded full scan": {
+          "median_ms": 125.357208,
+          "mean_ms": 128.046180152,
+          "p95_ms": 143.70985,
+          "max_ms": 243.069375
+        }
+      },
+      "t_start": 1781165728.462792
+    },
+    {
+      "round": 5,
+      "order": [
+        "stage2 fp32 rerank K=1024",
+        "stage2 fp32 rerank K=256",
+        "stage2 fp32 rerank K=100",
+        "stage1 sign-coded full scan",
+        "fp32 full scan (reference)"
+      ],
+      "results": {
+        "stage2 fp32 rerank K=1024": {
+          "median_ms": 8.536979,
+          "mean_ms": 8.701466484000001,
+          "p95_ms": 9.504333649999998,
+          "max_ms": 29.075417
+        },
+        "stage2 fp32 rerank K=256": {
+          "median_ms": 2.039479,
+          "mean_ms": 2.082260862,
+          "p95_ms": 2.3906160499999998,
+          "max_ms": 2.789584
+        },
+        "stage2 fp32 rerank K=100": {
+          "median_ms": 1.123271,
+          "mean_ms": 1.164149972,
+          "p95_ms": 1.45288365,
+          "max_ms": 13.253791
+        },
+        "stage1 sign-coded full scan": {
+          "median_ms": 121.863125,
+          "mean_ms": 123.08703081600001,
+          "p95_ms": 131.5861931,
+          "max_ms": 176.751625
+        },
+        "fp32 full scan (reference)": {
+          "median_ms": 149.44766700000002,
+          "mean_ms": 151.792841338,
+          "p95_ms": 160.23667709999998,
+          "max_ms": 634.903833
+        }
+      },
+      "t_start": 1781165874.7164118
+    }
+  ],
+  "summary": {
+    "stage1 sign-coded full scan": {
+      "median_of_round_medians_ms": 124.58102099999999,
+      "round_medians_ms": [
+        121.2650625,
+        121.863125,
+        124.58102099999999,
+        125.357208,
+        147.564521
+      ],
+      "iqr_ms": 3.4940830000000034,
+      "min_ms": 121.2650625,
+      "max_ms": 147.564521,
+      "spread_ms": 26.299458500000014,
+      "mean_of_round_means_ms": 130.51346306520003
+    },
+    "fp32 full scan (reference)": {
+      "median_of_round_medians_ms": 148.467396,
+      "round_medians_ms": [
+        145.950667,
+        146.561979,
+        148.467396,
+        149.44766700000002,
+        150.641
+      ],
+      "iqr_ms": 2.885688000000016,
+      "min_ms": 145.950667,
+      "max_ms": 150.641,
+      "spread_ms": 4.690332999999981,
+      "mean_of_round_means_ms": 152.0103464328
+    },
+    "stage2 fp32 rerank K=100": {
+      "median_of_round_medians_ms": 1.123271,
+      "round_medians_ms": [
+        0.8965,
+        0.9315205,
+        1.123271,
+        1.1809375,
+        1.2647085
+      ],
+      "iqr_ms": 0.249417,
+      "min_ms": 0.8965,
+      "max_ms": 1.2647085,
+      "spread_ms": 0.36820850000000005,
+      "mean_of_round_means_ms": 1.1211621915999999
+    },
+    "stage2 fp32 rerank K=256": {
+      "median_of_round_medians_ms": 2.0705834999999997,
+      "round_medians_ms": [
+        1.9878330000000002,
+        2.039479,
+        2.0705834999999997,
+        2.3265835,
+        2.3266875000000002
+      ],
+      "iqr_ms": 0.2871044999999999,
+      "min_ms": 1.9878330000000002,
+      "max_ms": 2.3266875000000002,
+      "spread_ms": 0.33885450000000006,
+      "mean_of_round_means_ms": 2.2019819735999997
+    },
+    "stage2 fp32 rerank K=1024": {
+      "median_of_round_medians_ms": 8.536979,
+      "round_medians_ms": [
+        8.366646,
+        8.430666500000001,
+        8.536979,
+        8.681875,
+        9.204083
+      ],
+      "iqr_ms": 0.25120849999999884,
+      "min_ms": 8.366646,
+      "max_ms": 9.204083,
+      "spread_ms": 0.8374370000000013,
+      "mean_of_round_means_ms": 8.7749887204
+    }
+  },
+  "verdict": null
+}

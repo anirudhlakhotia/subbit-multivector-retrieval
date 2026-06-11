@@ -1,0 +1,131 @@
+{
+  "paper_reference": "tab:plaid",
+  "rows": [
+    {
+      "bytes_per_token": {
+        "exact": 512,
+        "paper": "512"
+      },
+      "method": "fp32",
+      "mrr@10": {
+        "exact": 0.864110724519031,
+        "paper": "0.8641"
+      },
+      "ndcg@10": {
+        "exact": 0.8889067399284954,
+        "paper": "0.8889"
+      }
+    },
+    {
+      "bytes_per_token": {
+        "exact": 66,
+        "paper": "66"
+      },
+      "method": "PLAID b=4",
+      "mrr@10": {
+        "exact": 0.8627256446991376,
+        "paper": "0.8627"
+      },
+      "ndcg@10": {
+        "exact": 0.8875430936570913,
+        "paper": "0.8875"
+      }
+    },
+    {
+      "bytes_per_token": {
+        "exact": 34,
+        "paper": "34"
+      },
+      "method": "PLAID b=2",
+      "mrr@10": {
+        "exact": 0.8593133442488723,
+        "paper": "0.8593"
+      },
+      "ndcg@10": {
+        "exact": 0.8841366720524131,
+        "paper": "0.8841"
+      }
+    },
+    {
+      "bytes_per_token": {
+        "exact": 18,
+        "paper": "18"
+      },
+      "method": "PLAID b=1",
+      "mrr@10": {
+        "exact": 0.8497807226997744,
+        "paper": "0.8498"
+      },
+      "ndcg@10": {
+        "exact": 0.8755914193855697,
+        "paper": "0.8756"
+      }
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "method": "Random R r=64",
+      "mrr@10": {
+        "exact": 0.8393475690180545,
+        "paper": "0.8393"
+      },
+      "ndcg@10": {
+        "exact": 0.8670017305001692,
+        "paper": "0.8670"
+      }
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "method": "Random R r=64 + fp32 rerank K=100",
+      "mrr@10": {
+        "exact": 0.8640626279164934,
+        "paper": "0.8641"
+      },
+      "ndcg@10": null
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "method": "Trained R no scale",
+      "mrr@10": {
+        "exact": 0.8500179651612301,
+        "paper": "0.8500"
+      },
+      "ndcg@10": {
+        "exact": 0.8754830301006663,
+        "paper": "0.8755"
+      }
+    },
+    {
+      "bytes_per_token": {
+        "exact": 8,
+        "paper": "8"
+      },
+      "method": "Identity sign",
+      "mrr@10": {
+        "exact": 0.8366803679446932,
+        "paper": "0.8367"
+      },
+      "ndcg@10": {
+        "exact": 0.8644201100064893,
+        "paper": "0.8644"
+      }
+    }
+  ],
+  "source_files": [
+    "artifacts/results/aug_eval/table_plaid_noscale_aug.json",
+    "artifacts/results/aug_eval/rerank_aug_fullfp32_randomR.json",
+    "artifacts/results/aug_eval/rerank_aug_fullfp32.json"
+  ],
+  "trained_R_k100_mrr@10": {
+    "exact": 0.8641740573975503,
+    "paper": "0.8642"
+  }
+}

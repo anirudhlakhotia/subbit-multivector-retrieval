@@ -1,0 +1,19 @@
+{
+  "config": {
+    "worst_frac": 0.05,
+    "n_judged": 6980,
+    "maxt": 180,
+    "embeddings_dir": "/Users/anirudh.lakhotia/Documents/papers/sub-bit-compression/data/embeddings/msmarco/100k_aug"
+  },
+  "validation": {
+    "mean_fp32_rr@10": 0.8642539909946787,
+    "target_fp32": 0.8641,
+    "mean_subbit_rr@10": 0.8504842639129534,
+    "target_subbit": 0.8505
+  },
+  "n_worst": 349,
+  "worst_mean_shift_subbit_minus_fp32": -0.5266566590727116,
+  "worst_still_in_top10": 322,
+  "worst_still_in_top10_pct": 92.3,
+  "worst_dropped_out": 27
+}

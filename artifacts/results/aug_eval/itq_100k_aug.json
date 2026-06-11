@@ -1,0 +1,28 @@
+{
+  "harness": {
+    "embeddings_dir": "data/embeddings/msmarco/100k_aug",
+    "n_docs": 100000,
+    "n_qrels": 6980,
+    "r": 64,
+    "pca_sample": 50000,
+    "itq_iters": 50,
+    "seed": 42,
+    "device": "cpu"
+  },
+  "results": {
+    "itq_asym": {
+      "mrr@10": 0.8319236935461853,
+      "recall@100": 0.987070200573066,
+      "recall@1000": 0.9957736389684814,
+      "wall_seconds": 1399.4533460140228,
+      "n_queries": 6980
+    },
+    "itq_sym": {
+      "mrr@10": 0.8091126006276418,
+      "recall@100": 0.9841332378223497,
+      "recall@1000": 0.9949856733524355,
+      "wall_seconds": 1173.8922657966614,
+      "n_queries": 6980
+    }
+  }
+}
