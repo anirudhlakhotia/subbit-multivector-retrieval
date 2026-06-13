@@ -5,7 +5,7 @@ STRIPPED (encode_corpus.py keeps only real tokens -> ~8 tokens/query, no query
 expansion). That is non-standard and is the sole reason local MRR (0.8169)
 differs from the augmented Modal pipeline (0.8505). This script produces a
 drop-in augmented query cache so the local 100k evals can be re-run on the
-*standard* (queryFromText, 32-token [MASK]-augmented) convention -- on the Mac,
+*standard* (queryFromText, 32-token [MASK]-augmented) convention, on the Mac,
 no Modal cost.
 
 It writes ``query_embeddings_aug.pt`` (dict qid -> (32,128)) next to the slice;

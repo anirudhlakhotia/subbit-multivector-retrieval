@@ -3,7 +3,7 @@
 The point is not a tidy 23 -> 49 -> 99.7 gradient (overlap and recall are
 different metric families). The point is the contrast in shape: token-geometry
 agreement sits low and falls as the neighbourhood grows, while relevant-document
-recall sits at the ceiling and rises. Document rankings land in between. The same
+recall sits at the ceiling and rises. Document rankings sit between the two. The same
 r=64 sign code scrambles local geometry yet keeps the relevant document.
 
 Curves (augmented 100k diagnostic slice, r=64):

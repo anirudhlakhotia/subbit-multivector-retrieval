@@ -3,7 +3,7 @@ from __future__ import annotations
 """Encode MS MARCO corpus with frozen ColBERTv2.
 
 Produces cached embedding files that the training pipeline consumes.
-ColBERT is only run here — training only updates R on cached embeddings.
+ColBERT runs only here; training only updates R on the cached embeddings.
 
 Output:
   embeddings_dir/

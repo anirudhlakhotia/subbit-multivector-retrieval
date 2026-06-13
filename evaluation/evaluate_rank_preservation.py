@@ -8,7 +8,7 @@ overlap / Pearson diagnostics on the 100k augmented corpus for:
     * random R      (orthogonal init, no training)
     * PCA R         (PCA on doc tokens, no training)
     * identity      (keep first r dims, then binarise)
-    * [optional]    learned R in symmetric mode -- the paper's efficiency mode
+    * [optional]    learned R in symmetric mode, the paper's efficiency mode
 
 Each row of the output is the same metric set used in the main rank-
 preservation analysis, so the table is directly comparable to Figure X.

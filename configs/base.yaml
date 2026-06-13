@@ -35,7 +35,7 @@ training:
   lr: 1.0e-3
   weight_decay: 1.0e-4
   warmup_steps: 250
-  max_steps: 25000                      # best MRR@10 typically lands near step 15000
+  max_steps: 25000                      # best MRR@10 is usually around step 15000
   gradient_clip: 1.0
 
   # Optimizer / schedule

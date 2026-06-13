@@ -64,7 +64,7 @@ ax.plot(24, 0.8582, "s", color=C_RABITQ, ms=4, zorder=3, label="RaBitQ ($24$ B)"
 
 # 8 B/tok single-stage codes (grey cluster): trained R and random R are the
 # section's two arms; the rest are matched-byte single-vector baselines.
-# This is a single-stage storage-quality plot -- the fp32 rerank is a separate
+# This is a single-stage storage-quality plot; the fp32 rerank is a separate
 # two-stage step (deferred to the PLAID/rerank section) and is NOT shown here,
 # since its quality needs the full-precision store, not the 8 B/tok index.
 base8 = [("trained $R$", 0.8496), ("random $R$", 0.8393), ("identity", 0.8367),

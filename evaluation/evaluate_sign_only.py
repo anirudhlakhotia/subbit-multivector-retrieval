@@ -1,6 +1,6 @@
 """Evaluate sign-of-fp32-vector MaxSim retrieval at r=128 (no projection).
 
-The cleanest demonstration of the argmax-floor claim: each document token
+A direct test of the argmax-floor claim: each document token
 d is stored as sign(d) in {-1,+1}^128 (16 B/tok, 8x over INT8 ColBERTv2);
 each query token stays fp32; per-q-token MaxSim sums over doc tokens.
 
@@ -116,12 +116,10 @@ def run_encoder(name: str, emb_dir: Path, fixed_K: bool, device: torch.device) -
     N, K, dim = docs.shape
     print(f"  docs: N={N} K={K} dim={dim} (loaded in {time.perf_counter()-t0:.1f}s)", flush=True)
     print(f"  fp32 baseline (sign-off comparison reference)...", flush=True)
-    # Reuse the same eval but with sign() turned off (i.e., plain dot product).
-    # The cleanest approach: just call again with docs not signed.
+    # Same eval with sign() turned off, i.e. plain dot-product MaxSim.
     t_fp = time.perf_counter()
-    # fp32 baseline = "this work" without the sign() — i.e., plain MaxSim.
-    # We compute it inline so the baseline matches the eval protocol exactly.
-    # Trick: temporarily duplicate the function with sign() removed.
+    # Computed via _eval_fp32_baseline, which mirrors the eval protocol with
+    # sign() removed, so the baseline matches the signed eval exactly.
     mrr10_fp, r100_fp, r1000_fp, _ = _eval_fp32_baseline(
         docs, doc_lens, pids, qs, qrels, device,
     )
@@ -202,12 +200,20 @@ def main():
         fixed_K=False,
         device=device,
     )
-    results["constbert"] = run_encoder(
-        "ConstBERT",
-        Path("data/embeddings/constbert/100k"),
-        fixed_K=True,
-        device=device,
-    )
+    constbert_dir = Path("data/embeddings/constbert/100k")
+    if constbert_dir.exists():
+        results["constbert"] = run_encoder(
+            "ConstBERT",
+            constbert_dir,
+            fixed_K=True,
+            device=device,
+        )
+    else:
+        print(
+            f"  [skip] ConstBERT cache not found at {constbert_dir}; "
+            "skipping ConstBERT (not bundled in this release).",
+            flush=True,
+        )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(results, indent=2))

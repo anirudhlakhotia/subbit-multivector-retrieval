@@ -73,8 +73,8 @@ class MiningTriplesDataset(Dataset):
 def test_trainer_results_include_paper_recording_fields(tmp_path):
     """Trainer.train() must return every field needed for the paper record.
 
-    The fields below are the one-stop resource the paper draws on; if any of
-    them goes missing the JSON written to `outputs/<run>/training_results.json`
+    The fields below are what the paper record reads back; if any of them
+    goes missing the JSON written to `outputs/<run>/training_results.json`
     stops being self-contained.
     """
     config = {

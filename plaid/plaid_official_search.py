@@ -5,7 +5,7 @@ Two phases:
   A) QUALITY: all 6,980 judged dev queries, k=1000 -> MRR@10 / R@100 / R@1000
      against the repo's qrels (results mapped back via pid_map.tsv).
      PLAID encodes queries with its own ColBERTv2 checkpoint (standard
-     32-token augmented convention -- matches the paper's re-baseline).
+     32-token augmented convention, matching the paper's re-baseline).
   B) ENGINE LATENCY: the same seeded 500-query subsample as
      bench_latency_interleaved.py (rng(42).permutation over sorted qrels qids),
      1 warm-up round + N timed rounds. Primary timed region = dense_search()

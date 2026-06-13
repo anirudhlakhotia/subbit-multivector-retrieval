@@ -32,8 +32,8 @@ No backward-compat aliases or non-paper model variants are active here.
   `PrecomputedEncoder`.
 - **`measurement.py`** - latency, memory, metadata, and storage instrumentation
   for reviewer-ready runs.
-- **`rank_preservation.py`**, **`scale_sweep.py`**, **`smoke_helpers.py`** -
-  focused helpers used by the paper diagnostics and smoke checks.
+- **`rank_preservation.py`** - rank-fidelity helpers (Spearman, Kendall,
+  overlap@K) used by the paper diagnostics.
 - **`utils.py`** - seeding, device selection, Stiefel projection, and logging
   helpers.
 

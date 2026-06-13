@@ -26,7 +26,7 @@ def boundary_guard_loss(
     q_mask: torch.Tensor | None = None,
     d_mask: torch.Tensor | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor]:
-    """Top-K basin shaping plus adversarial sentinel anchoring."""
+    """Match the top-K scores, and guard the highest non-top-K sentinel."""
 
     batch_size = q_proj.shape[0]
     total_loss_topk = torch.tensor(0.0, device=q_proj.device)

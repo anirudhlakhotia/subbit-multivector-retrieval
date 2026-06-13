@@ -162,8 +162,8 @@ def run(
         if env_seed is not None and env_seed.strip() != "":
             rand_seed = int(env_seed)
     if rand_seed is not None:
-        # Mirror src/subbit/smoke_helpers.py::build_random_R exactly so the
-        # in-script R is byte-identical to what the smoke test verifies.
+        # Build the random orthogonal R deterministically from the seed (QR of
+        # a seeded Gaussian), so every random-R arm uses the same projection.
         torch.manual_seed(int(rand_seed))
         Q_mat, _ = torch.linalg.qr(torch.randn(R_ckpt.shape[1], R_ckpt.shape[1]))
         R = Q_mat.T[:r].contiguous().to(DEVICE).float()

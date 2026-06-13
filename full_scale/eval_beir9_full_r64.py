@@ -100,8 +100,7 @@ def run(
           f"top_k={top_k}  seed={seed}", flush=True)
 
     # ---- Random R r=64 (canonical seed=42, first R_DIM rows of Q.T;
-    #      byte-identical to build_random_R(seed=42, dim=128, r=64) in
-    #      src/subbit/smoke_helpers.py and to full_scale/eval_rand_plus_scale_full.py
+    #      same construction as full_scale/eval_rand_plus_scale_full.py
     #      RAND_SEED path). --------------------------------------------------
     torch.manual_seed(seed)
     Q, _ = torch.linalg.qr(torch.randn(DIM, DIM))

@@ -48,10 +48,10 @@ from typing import Optional
 import modal
 
 APP_NAME = "subbit-msmarco-eval-rand-plus-scale"
-# Same v2 volume as canonical SubBit eval — read-only here, so concurrent
-# parallel runs are safe. Each parallel script writes to a distinct output
-# JSON and uses a distinct sweep-checkpoint path so they don't clobber each
-# other if one crashes mid-run.
+# Same v2 volume as canonical SubBit eval — read-only here, so parallel runs
+# are safe. Each parallel script writes to a distinct output JSON and uses a
+# distinct sweep-checkpoint path so they don't clobber each other if one
+# crashes mid-run.
 VOLUME_NAME = "subbit-msmarco-cache-v2"
 
 # "Frozen random R + trained scale head" ablation checkpoint from §5.
@@ -159,8 +159,8 @@ def run(
         if env_seed is not None and env_seed.strip() != "":
             rand_seed = int(env_seed)
     if rand_seed is not None:
-        # Mirror src/subbit/smoke_helpers.py::build_random_R exactly so the
-        # in-script R is byte-identical to what the smoke test verifies.
+        # Build the random orthogonal R deterministically from the seed (QR of
+        # a seeded Gaussian), so every random-R arm uses the same projection.
         torch.manual_seed(int(rand_seed))
         Q_mat, _ = torch.linalg.qr(torch.randn(R_ckpt.shape[1], R_ckpt.shape[1]))
         R = Q_mat.T[:r].contiguous().to(DEVICE).float()

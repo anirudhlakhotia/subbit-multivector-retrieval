@@ -246,7 +246,7 @@ ax_D.set_ylabel("$\\Delta$MRR@10 (trained $-$ random)", labelpad=3)
 ax_D.set_title("(D) Gain vanishes at scale", pad=4)
 ax_D.yaxis.grid(True, linewidth=0.5, alpha=0.5, zorder=0)
 
-# Ensure zero line is visible — set sensible ylim
+# Keep zero line visible — set sensible ylim
 ymax_d = max(ci_hi) * 1.6
 ymin_d = min(ci_lo) * 1.6
 ax_D.set_ylim(min(ymin_d, -0.005), max(ymax_d, 0.020))

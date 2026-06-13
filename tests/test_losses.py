@@ -3,7 +3,7 @@
 The active loss is `boundary_guard_loss` — Top-K Basin Shaping (MSE) plus an
 Adversarial Sentinel (MSE anchoring the strongest student outsider to its
 teacher score). All prior heuristic losses (InfoNCE, distillation KL,
-token-winner CE, triplet ranking, etc.) were physically removed; tests for
+token-winner CE, triplet ranking, etc.) were removed; tests for
 them have been dropped.
 """
 
@@ -56,7 +56,7 @@ def batch_data():
 
 
 # ---------------------------------------------------------------------------
-# boundary_guard_loss — the heart of the training objective
+# boundary_guard_loss — the active training objective
 # ---------------------------------------------------------------------------
 
 

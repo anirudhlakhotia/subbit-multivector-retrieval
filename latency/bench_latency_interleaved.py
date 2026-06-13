@@ -10,7 +10,7 @@ compute (same projected-query shape, same sign-code shape, same float einsum):
     trained 70.7 ms | pca 83.3 ms | identity 91.0 ms | random 107.7 ms
 
 A 52% spread across identical-compute rows is a measurement artifact, not an
-effect. Repeated smoke runs identified the disease: per-pass MEANS swing ~60% pass-to-pass (a handful of
+effect. Repeated smoke runs found the cause: per-pass MEANS swing ~60% pass-to-pass (a handful of
 stalls dominate), while per-query MEDIANS are stable within ~2% of the
 canonical anchor. The canonical bench also runs methods as sequential blocks,
 so cold caches hit the first rows and thermal throttle hits the last.

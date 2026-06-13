@@ -4,7 +4,7 @@ The r=128 RANDOM arm of the scale-held-constant 8.8M comparison. R is a frozen r
 orthonormal 128x128 matrix, W_scale trained with R frozen (checkpoint
 ablation_rand128_plus_scale), doc encoded as sign(R.d), query full-precision (asymmetric).
 Run identically to ``full_scale/eval_rand_plus_scale_full.py`` (same image, pipeline, metrics)
-so the 8.8M r=128 block isolates the projection with the scale head held constant —
+so the 8.8M r=128 block isolates the projection with the scale head held constant:
 trained vs random vs identity, all +scale (16 B/tok). Checkpoint: ablation_rand128_plus_scale.
 
 Reads
@@ -161,8 +161,8 @@ def run(
         if env_seed is not None and env_seed.strip() != "":
             rand_seed = int(env_seed)
     if rand_seed is not None:
-        # Mirror src/subbit/smoke_helpers.py::build_random_R exactly so the
-        # in-script R is byte-identical to what the smoke test verifies.
+        # Build the random orthogonal R deterministically from the seed (QR of
+        # a seeded Gaussian), so every random-R arm uses the same projection.
         torch.manual_seed(int(rand_seed))
         Q_mat, _ = torch.linalg.qr(torch.randn(R_ckpt.shape[1], R_ckpt.shape[1]))
         R = Q_mat.T[:r].contiguous().to(DEVICE).float()

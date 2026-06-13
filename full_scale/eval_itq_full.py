@@ -4,11 +4,11 @@ Matched-format comparison to SubBit at the same 8 B/tok payload. The only
 difference vs ``full_scale/eval_subbit_full.py`` is the source of the projection
 $R$ and the absence of a query-side scale head:
 
-* SubBit:   $R$ is the trained projection from ``outputs/50k_topk/checkpoints/best.pt`` plus a 129-parameter scale head ``s(q)``.
-* ITQ:      $R$ is the precomputed PCA $\\to$ ITQ rotation from ``outputs/itq_init/R_r64.pt``; queries are $R \\cdot q$ with no scale head.
+* SubBit:   $R$ is the trained projection from ``artifacts/checkpoints/50k_topk/best.pt`` plus a 129-parameter scale head ``s(q)``.
+* ITQ:      $R$ is the precomputed PCA $\\to$ ITQ rotation from ``artifacts/checkpoints/itq_init/R_r64.pt``; queries are $R \\cdot q$ with no scale head.
 
 Same encoder (ColBERTv2), same corpus (full MS MARCO), same scoring
-(asymmetric MaxSim), same metrics path. Apples-to-apples.
+(asymmetric MaxSim), same metrics path.
 
 Reads
 -----
@@ -166,7 +166,7 @@ def run(
     del encoder
     torch.cuda.empty_cache()
 
-    # ---- Apply ITQ R to queries (NO scale head — that's a SubBit thing) -
+    # ---- Apply ITQ R to queries (no scale head; scale head is SubBit-only) -
     Q_proj = Q_emb @ R.T   # (Qn, m, r)
     print(f"  queries projected: {tuple(Q_proj.shape)} (no scale head)")
     Qn, m_q, _ = Q_proj.shape

@@ -14,7 +14,7 @@ Most MaxSim Winners Flip, Retrieval Survives: Low-Margin Substitution in Sign-Co
 - `latency/` — latency benchmarking harness.
 - `plaid/` — PLAID helper scripts.
 - `statistics/` — bootstrap and CI scripts.
-- `utils/` — storage accounting, ITQ projection, ConstBERT helper, and paper output builder.
+- `utils/` — paper output builder (rebuilds the curated JSONs, including storage accounting), ITQ projection helper, and ConstBERT sign-coding helper.
 - `full_scale/` — Modal jobs for full-scale paper tables.
 - `tests/` — unit tests.
 

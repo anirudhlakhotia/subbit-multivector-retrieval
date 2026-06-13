@@ -1,8 +1,8 @@
 """Baseline compression methods for comparison.
 
 All baselines take full-precision ColBERT embeddings and produce compressed
-representations. These are NOT learned — they serve as reference points
-on the Pareto frontier.
+representations. These are NOT learned; they are reference points on the
+Pareto frontier.
 
 Baselines:
   1. Random projection + binary: Random orthogonal R + sign
@@ -35,7 +35,7 @@ def random_projection_binary(
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """Random orthogonal projection + binarization.
 
-    Uses a random orthonormal R (no learning). Serves as the
+    Uses a random orthonormal R (no learning). This is the
     "how much does learning buy you?" baseline.
 
     Args:

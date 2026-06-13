@@ -13,7 +13,7 @@ Pytest suite for the active paper path. Run with `pytest tests/ -v`.
   and r=128 identity parity.
 - `test_baselines.py`, `test_baseline_correctness.py`,
   `test_baselines_plaid.py`, `test_data.py`, `test_evaluation.py`,
-  `test_rank_preservation.py`, `test_scale_sweep_subset.py`,
+  `test_rank_preservation.py`,
   and `test_training.py` - active module-specific coverage.
 - `smoke_test.py` - end-to-end import, encode/score, and save/load smoke
   coverage.
