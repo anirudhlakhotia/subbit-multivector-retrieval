@@ -4,7 +4,9 @@
 
 Couchbase, Inc., USA
 
-*Under review at ReNeuIR 2026*
+*Accepted at ReNeuIR 2026*
+
+[Paper (PDF)](paper/paper_reneuir.pdf)
 
 ## Abstract
 
